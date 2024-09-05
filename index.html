@@ -66,34 +66,22 @@
 
 <div class="flex">
     <!-- 사이드 메뉴 -->
-    <nav class="text-center w-16 hover:w-64 transition-all duration-300 ease-in-out bg-gray-200 dark:bg-gray-800 shadow-lg min-h-screen p-4 flex flex-col sticky top-0 z-10">
-        <div class="flex flex-col items-center space-y-4">
-            <img src="images/my_image_sample.jpg" alt="프로필 이미지" class="mx-auto mt-2 mb-2 rounded-full">
-            <span class="text-lg mb-2 text-black dark:text-white opacity-0 hover:opacity-100 transition-opacity duration-300">임재원</span>
-            <span class="text-sm mb-2 font-semibold text-black dark:text-white opacity-0 hover:opacity-100 transition-opacity duration-300">JAVA 풀스택 개발자</span>
-        </div>
-        
+    <nav class="text-center w-16 bg-gray-200 dark:bg-gray-800 shadow-lg min-h-screen p-4 flex flex-col sticky top-0">
         <ul class="flex flex-col space-y-4">
             <li class="flex items-center space-x-2 group">
-                <i class="fa-solid fa-house text-gray-600 dark:text-gray-300"></i>
-                <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-blue-400 dark:hover:text-blue-400 hidden group-hover:inline-block">HOME</a></li>
+                <a href="#home"><i class="fa-solid fa-house text-gray-600 dark:text-gray-300"></i></a></li>
             <li class="flex items-center space-x-2 group">
-                <i class="fa-solid fa-address-card text-gray-600 dark:text-gray-300"></i>
-                <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-400 dark:hover:text-blue-400 hidden group-hover:inline-block">ABOUT</a></li>
+                <a href="#about"><i class="fa-solid fa-address-card text-gray-600 dark:text-gray-300"></i></a></li>
             <li class="flex items-center space-x-2 group">
-                <i class="fa-solid fa-screwdriver-wrench text-gray-600 dark:text-gray-300"></i>
-                <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-blue-400 dark:hover:text-blue-400 hidden group-hover:inline-block">SKILLS</a></li>
+                <a href="#skills"><i class="fa-solid fa-screwdriver-wrench text-gray-600 dark:text-gray-300"></i></a></li>
             <li class="flex items-center space-x-2 group">
-                <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-400 dark:hover:text-blue-400 hidden group-hover:inline-block">PROJECTS</a></li>
+                <a href="#projects"><i class="fa-solid fa-list-check text-gray-600 dark:text-gray-300"></i></a></li>
             <li class="flex items-center space-x-2 group">
-                <i class="fa-solid fa-head-side-virus text-gray-600 dark:text-gray-300"></i>
-                <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-blue-400 dark:hover:text-blue-400 hidden group-hover:inline-block">EXPERIENCE</a></li>
+                <a href="#experience"><i class="fa-solid fa-head-side-virus text-gray-600 dark:text-gray-300"></i></a></li>
             <li class="flex items-center space-x-2 group">
-                <i class="fa-solid fa-user-graduate text-gray-600 dark:text-gray-300"></i>
-                <a href="#education" class="text-gray-600 dark:text-gray-300 hover:text-blue-400 dark:hover:text-blue-400 hidden group-hover:inline-block">EDUCATION</a></li>
+                <a href="#education"><i class="fa-solid fa-user-graduate text-gray-600 dark:text-gray-300"></i></a></li>
             <li class="flex items-center space-x-2 group">
-                <i class="fa-solid fa-address-book text-gray-600 dark:text-gray-300"></i>
-                <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-400 dark:hover:text-blue-400 hidden group-hover:inline-block">CONTACT</a></li>
+                <a href="#contact"><i class="fa-solid fa-address-book text-gray-600 dark:text-gray-300"></i></a></li>
         </ul>
     </nav>
     
@@ -112,9 +100,15 @@
         <section id="about" class="py-12 flex flex-col">
             <div class="container mx-auto text-center">
                 <span class="text-sm font-semibold text-black dark:text-white">ABOUT ME</span>
+                
+                <div class="flex flex-col items-center">
+                    <img src="images/my_image_sample.jpg" alt="프로필 이미지" class="mx-auto mt-2 mb-2 rounded-full">
+                    <span class="text-lg mb-2 text-black dark:text-white">임재원</span>
+                    <span class="text-sm mb-2 font-semibold text-black dark:text-white">JAVA 풀스택 개발자</span>
+                </div>
                 <span class="text-xl mt-4 max-w-2xl mx-auto">
                 안녕하세요.
-            </span>
+                </span>
             </div>
         </section>
     </div>
