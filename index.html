@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>임재원 포트폴리오</title>
     
     <!-- 테일윈드 -->
@@ -12,21 +13,51 @@
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- 자바스크립트 -->
+    <script>
+        // 페이지 로드 시 테마를 확인하고 적용
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.documentElement.classList.remove('dark');
+                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
+            } else {
+                document.documentElement.classList.add('dark');
+                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
+        });
+
+        // 테마 전환 함수
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+    </script>
 </head>
 
-<body>
-
-<div class="container flex flex-col">
-    <div class="header_container bg-purple-300 w-full h-6">
-        <div>신입 개발자 임재원 포트폴리오</div>
-    </div>
-    <div class="body_container flex">
-        <div class="left_container border">
-        
+<body class="dark:bg-gray-900 dark:text-gray-300 bg-gray-200 text-gray-900">
+    <!-- 헤더 -->
+    <header class="bg-gray-200 dark:bg-gray-800 p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-black dark:text-white">신입 개발자 임재원 포트폴리오</h1>
+            <nav class="flex items-center space-x-4">
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="hover:text-blue-400 dark:hover:text-blue-400">About</a></li>
+                    <li><a href="#projects" class="hover:text-blue-400 dark:hover:text-blue-400">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 dark:hover:text-blue-400">Contact</a></li>
+                </ul>
+                <!-- 다크/라이트 모드 전환 버튼 -->
+                <button onclick="toggleTheme()" class="ml-4 bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-1 px-3 rounded">
+                    <span id="theme-icon"><i class="fa-solid fa-sun"></i></span>
+                </button>
+            </nav>
         </div>
-        <div class="main_container border"></div>
-    </div>
-</div>
+    </header>
 
 </body>
 </html>
