@@ -15,56 +15,63 @@
 
     <!-- 자바스크립트 -->
     <script>
-        // 페이지 로드 시 테마를 확인하고 적용
-        document.addEventListener('DOMContentLoaded', function () {
-            const theme = localStorage.getItem('theme');
-            if (theme === 'light') {
-                document.documentElement.classList.remove('dark');
-                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
-            } else {
-                document.documentElement.classList.add('dark');
-                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
-            }
-        });
-
-        // 테마 전환 함수
-        function toggleTheme() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
-            }
+    <!-- 테일윈드 설정에서 다크 모드 활성화 -->
+    tailwind.config = {
+      darkMode: 'class',
+    }
+    
+    // 페이지 로드 시 테마를 확인하고 적용
+    document.addEventListener('DOMContentLoaded', function () {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
+        } else {
+            document.documentElement.classList.add('dark');
+            document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
         }
+    });
+
+    // 테마 전환 함수
+    function toggleTheme() {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
+        }
+    }
     </script>
 </head>
 
 <body class="dark:bg-gray-900 dark:text-gray-300 bg-gray-200 text-gray-900">
-    <!-- 헤더 -->
-    <header class="flex justify-between bg-gray-200 dark:bg-gray-800 h-2 p-4 shadow-md">
-        <span class="text-sm text-black dark:text-white">신입 개발자 임재원 포트폴리오</span>
-        
-        <!-- 다크/라이트 모드 전환 버튼 -->
-        <button onclick="toggleTheme()" class="mt-8 bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-1 px-3 rounded">
-            <span id="theme-icon"><i class="fa-solid fa-sun"></i></span>
-        </button>
-    </header>
-    <!-- 사이드 메뉴 -->
-    <nav class="w-10 bg-gray-200 dark:bg-gray-800 min-h-screen p-4">
-        <ul class="flex flex-col space-y-4">
-            <li><a href="#home" class="hover:text-blue-400 dark:hover:text-blue-400">HOME</a></li>
-            <li><a href="#about" class="hover:text-blue-400 dark:hover:text-blue-400">ABOUT</a></li>
-            <li><a href="#skills" class="hover:text-blue-400 dark:hover:text-blue-400">SKILLS</a></li>
-            <li><a href="#projects" class="hover:text-blue-400 dark:hover:text-blue-400">PROJECTS</a></li>
-            <li><a href="#experience" class="hover:text-blue-400 dark:hover:text-blue-400">EXPERIENCE</a></li>
-            <li><a href="#education" class="hover:text-blue-400 dark:hover:text-blue-400">EDUCATION</a></li>
-            <li><a href="#blog" class="hover:text-blue-400 dark:hover:text-blue-400">BLOG</a></li>
-            <li><a href="#contact" class="hover:text-blue-400 dark:hover:text-blue-400">CONTACT</a></li>
-        </ul>
-    </nav>
+<!-- 헤더 -->
+<header class="flex justify-between items-center bg-gray-200 dark:bg-gray-800 h-16 p-4 shadow-md">
+    <span class="text-xs font-semibold text-black dark:text-white">신입 개발자 임재원 포트폴리오</span>
+    
+    <!-- 다크/라이트 모드 전환 버튼 -->
+    <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
+        <span id="theme-icon"><i class="fa-solid fa-sun"></i></span>
+    </button>
+</header>
+
+<!-- 사이드 메뉴 -->
+<nav class="w-40 bg-gray-300 dark:bg-gray-900 min-h-screen p-4 sticky top-0">
+    <span class="text-lg text-black dark:text-white">임재원</span>
+    <span class="text-sm font-semibold text-black dark:text-white">JAVA 풀스택 개발자</span>
+    <ul class="flex flex-col space-y-4">
+        <li><a href="#home" class="hover:text-blue-400 dark:hover:text-blue-400">HOME</a></li>
+        <li><a href="#about" class="hover:text-blue-400 dark:hover:text-blue-400">ABOUT</a></li>
+        <li><a href="#skills" class="hover:text-blue-400 dark:hover:text-blue-400">SKILLS</a></li>
+        <li><a href="#projects" class="hover:text-blue-400 dark:hover:text-blue-400">PROJECTS</a></li>
+        <li><a href="#experience" class="hover:text-blue-400 dark:hover:text-blue-400">EXPERIENCE</a></li>
+        <li><a href="#education" class="hover:text-blue-400 dark:hover:text-blue-400">EDUCATION</a></li>
+        <li><a href="#contact" class="hover:text-blue-400 dark:hover:text-blue-400">CONTACT</a></li>
+    </ul>
+</nav>
 
 </body>
 </html>
