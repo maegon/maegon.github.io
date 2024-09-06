@@ -83,15 +83,17 @@
 <header class="flex justify-between items-center bg-gray-100 dark:bg-gray-800 h-16 p-4 shadow-md sticky top-0 z-50">
     <span class="text-sm font-semibold text-black dark:text-white">신입 개발자 임재원 포트폴리오</span>
     
-    <!-- pdf 파일로 다운로드 버튼 -->
-    <button onclick="togglePDF()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
-        <span id="download-icon"><i class="fa-solid fa-file-pdf"></i></span>
-    </button>
-    
-    <!-- 다크/라이트 모드 전환 버튼 -->
-    <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
-        <span id="theme-icon"><i class="fa-solid fa-sun"></i></span>
-    </button>
+    <div class="set_box">
+        <!-- pdf 파일로 다운로드 버튼 -->
+        <button onclick="togglePDF()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
+            <span id="download-icon"><i class="fa-solid fa-file-pdf"></i></span>
+        </button>
+        
+        <!-- 다크/라이트 모드 전환 버튼 -->
+        <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
+            <span id="theme-icon"><i class="fa-solid fa-sun"></i></span>
+        </button>
+    </div>
 </header>
 
 <div class="flex">
@@ -169,7 +171,7 @@
             </li>
             
             <!-- 깃허브 아이콘 -->
-            <li class="group relative mt-40 mb-10 last:mb-0">
+            <li class="group relative mt-40 mb-10 last:mb-0 border-t border-gray-400 dark:border-gray-50">
                 <a href="https://github.com/maegon" target="_blank" class="flex justify-center">
                     <i class="fa-brands fa-github text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
