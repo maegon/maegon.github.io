@@ -25,7 +25,10 @@
     
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
+    <!-- html2pdf.js 라이브러리 추가 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    
     <!-- 자바스크립트 -->
     <script>
     <!-- 테일윈드 설정에서 다크 모드 활성화 -->
@@ -57,6 +60,21 @@
             document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
         }
     }
+    
+    // PDF 다운로드 함수
+    function togglePDF() {
+        var element = document.getElementById('main-pdf');
+        var opt = {
+            margin:       0.5,
+            filename:     '임재원 portfolio.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        // PDF 변환 및 다운로드 실행
+        html2pdf().from(element).set(opt).save();
+    }
     </script>
 </head>
 
@@ -64,6 +82,11 @@
 <!-- 헤더 -->
 <header class="flex justify-between items-center bg-gray-100 dark:bg-gray-800 h-16 p-4 shadow-md sticky top-0 z-50">
     <span class="text-sm font-semibold text-black dark:text-white">신입 개발자 임재원 포트폴리오</span>
+    
+    <!-- pdf 파일로 다운로드 버튼 -->
+    <button onclick="togglePDF()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
+        <span id="download-icon"><i class="fa-solid fa-file-pdf"></i></span>
+    </button>
     
     <!-- 다크/라이트 모드 전환 버튼 -->
     <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
@@ -147,27 +170,27 @@
             
             <!-- 깃허브 아이콘 -->
             <li class="group relative mt-40 mb-10 last:mb-0">
-                <a href="https://github.com/maegon" class="flex justify-center">
+                <a href="https://github.com/maegon" target="_blank" class="flex justify-center">
                     <i class="fa-brands fa-github text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
                 <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                Contact
+                Git Hub
             </span>
             </li>
         </ul>
     </nav>
     
     <!-- 메인 부분 -->
-    <div class="flex flex-col ml-24 mr-4">
+    <div id="main-pdf" class="flex flex-col ml-24 mr-4">
         <!-- 홈 섹션 -->
         <section id="home" class="min-h-screen flex flex-col justify-start">
-            <div class="container mx-auto text-center flex flex-col">
+            <div class="container text-center flex flex-col">
             </div>
         </section>
         
         <!-- 소개 섹션 -->
         <section id="about" class="py-12 flex flex-col justify-start">
-            <div class="container mx-auto text-start flex flex-col">
+            <div class="container text-start flex flex-col">
                 <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">ABOUT ME</span>
                 
                 <div class="flex">
