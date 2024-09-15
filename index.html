@@ -31,50 +31,68 @@
     
     <!-- 자바스크립트 -->
     <script>
-    <!-- 테일윈드 설정에서 다크 모드 활성화 -->
-    tailwind.config = {
-      darkMode: 'class',
-    }
-    
-    // 페이지 로드 시 테마를 확인하고 적용
-    document.addEventListener('DOMContentLoaded', function () {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'light') {
-            document.documentElement.classList.remove('dark');
-            document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
-        } else {
-            document.documentElement.classList.add('dark');
-            document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
+        // 테일윈드 설정에서 다크 모드 활성화
+        tailwind.config = {
+          darkMode: 'class',
         }
-    });
-
-    // 테마 전환 함수
-    function toggleTheme() {
-        if (document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-            document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
-        } else {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-            document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
-        }
-    }
+        
+        // 페이지 로드 시 테마를 확인하고 적용
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.documentElement.classList.remove('dark');
+                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
+            } else {
+                document.documentElement.classList.add('dark');
+                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
+        });
     
-    // PDF 다운로드 함수
-    function togglePDF() {
-        var element = document.getElementById('main-pdf');
-        var opt = {
-            margin:       0.5,
-            filename:     '임재원 portfolio.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 1 },
-            jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+        // 테마 전환 함수
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
+        }
+        
+        // PDF 다운로드 함수
+        function togglePDF() {
+            var element = document.getElementById('main-pdf');
+            var opt = {
+                margin:       0.5,
+                filename:     '임재원 portfolio.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 1 },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+            };
+    
+            // PDF 변환 및 다운로드 실행
+            html2pdf().from(element).set(opt).save();
+        }
+        
+        // 다크 모드 변경 감지
+        const customBorderElement = document.getElementById('custom-border');
+        const setBorderImage = () => {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // 다크 모드일 때
+                customBorderElement.style.borderImage = 'linear-gradient(to right, rgba(0, 0, 128, 0.4) 50%, rgba(0, 128, 0, 0.4) 50%) 1';
+            } else {
+                // 라이트 모드일 때
+                customBorderElement.style.borderImage = 'linear-gradient(to right, rgba(0, 0, 255, 0.4) 50%, rgba(0, 255, 0, 0.4) 50%) 1';
+            }
         };
-
-        // PDF 변환 및 다운로드 실행
-        html2pdf().from(element).set(opt).save();
-    }
+    
+        // 다크 모드 변경 이벤트 감지
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setBorderImage);
+    
+        // 초기 설정
+        setBorderImage();
     </script>
 </head>
 
@@ -351,9 +369,8 @@
                             </div>
                             <div class="back_skill_box flex-col flex-grow basis-1">
                                 <div class="mt-4">
-                                    <div class="flex-col border-4 m-4 p-4"
-                                         style="border-image: linear-gradient(to right, rgba(0, 0, 255, 0.4) 50%, rgba(0, 255, 0, 0.4) 50%) 1;"
-                                         dark:style="border-image: linear-gradient(to right, rgba(0, 0, 128, 0.4) 50%, rgba(0, 128, 0, 0.4) 50%) 1;">
+                                    <div id="custom-border" class="flex-col border-4 m-4 p-4"
+                                         style="border-image: linear-gradient(to right, rgba(0, 0, 255, 0.4) 50%, rgba(0, 255, 0, 0.4) 50%) 1;">
                                         <div>
                                             <span class="font-base">Java/Spring Boot</span>
                                             <span>
