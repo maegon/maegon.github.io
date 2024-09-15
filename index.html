@@ -75,24 +75,6 @@
             // PDF 변환 및 다운로드 실행
             html2pdf().from(element).set(opt).save();
         }
-        
-        // 다크 모드 변경 감지
-        const customBorderElement = document.getElementById('custom-border');
-        const setBorderImage = () => {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                // 다크 모드일 때
-                customBorderElement.style.borderImage = 'linear-gradient(to right, rgba(0, 0, 128, 0.4) 50%, rgba(0, 128, 0, 0.4) 50%) 1';
-            } else {
-                // 라이트 모드일 때
-                customBorderElement.style.borderImage = 'linear-gradient(to right, rgba(0, 0, 255, 0.4) 50%, rgba(0, 255, 0, 0.4) 50%) 1';
-            }
-        };
-    
-        // 다크 모드 변경 이벤트 감지
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setBorderImage);
-    
-        // 초기 설정
-        setBorderImage();
     </script>
 </head>
 
@@ -369,7 +351,7 @@
                             </div>
                             <div class="back_skill_box flex-col flex-grow basis-1">
                                 <div class="mt-4">
-                                    <div id="custom-border" class="flex-col border-4 m-4 p-4"
+                                    <div class="flex-col border-4 m-4 p-4"
                                          style="border-image: linear-gradient(to right, rgba(0, 0, 255, 0.4) 50%, rgba(0, 255, 0, 0.4) 50%) 1;">
                                         <div>
                                             <span class="font-base">Java/Spring Boot</span>
