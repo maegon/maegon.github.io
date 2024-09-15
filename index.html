@@ -82,6 +82,14 @@
                 }, 500);
             });
         });
+        
+        function toggleExplanation(button) {
+            // 설명 부분을 찾기 위해 부모 요소 내의 다음 sibling을 찾음
+            const explanation = button.parentElement.nextElementSibling;
+        
+            // 설명 부분을 토글
+            explanation.classList.toggle('hidden');
+        }
     </script>
 </head>
 
@@ -278,7 +286,7 @@
                 <div class="flex mt-10">
                     <div class="flex flex-col mt-2">
                         <!-- 기술 나열 및 설명, 사용사례 -->
-                        <span class="text-lg">스프링 기반 웹솔루션 풀스택 과정에서 백엔드와 프론트엔드 개발을 다루며 다양한 기술 스택을 학습했습니다. 인텔리제이 환경에서 자바, 스프링부트 프레임워크, Node.js의 백엔드 기술을 사용하고
+                        <span class="text-lg">스프링 기반 웹솔루션 풀스택 과정에서 백엔드와 프론트엔드 개발을 다루며 다양한 기술 스택을 학습했습니다. 인텔리제이 환경에서 자바, 스프링 부트 프레임워크, Node.js의 백엔드 기술을 사용하고
                         HTML5, CSS, JavaScript, 부트스트랩, Thymeleaf, Tailwind, 제이쿼리, Ajax를 사용하여 프론트엔드 기술을 다뤄봤습니다. MySQL, mariaDB를 통해 데이터베이스를 관리하였습니다. 학습한 각 기술에 대한 숙련도를
                             <span class="text-lg font-extrabold">5점에 가까울 수록 고급 기술을 사용할 줄 알고 추가적인 자료를 참고하면 부족한 부분도 스스로 해결할 수 있는 능력을 가진 것</span>을 기준으로 표시하였습니다.</span>
                         <!-- 기술 숙련도 표시 -->
@@ -296,10 +304,15 @@
                                                 <i class="fa-regular fa-star"></i>
 <!--                                                <i class="fas fa-star-half-alt"></i>-->
                                             </span>
+                                            
+                                            <!-- 설명을 토글하기 위한 아이콘 -->
+                                            <button onclick="toggleExplanation(this)" class="ml-2 focus:outline-none">
+                                                <i class="fa-solid fa-chevron-down"></i>
+                                            </button>
                                         </div>
-                                        <span class="text-sm font-normal">
+                                        <div class="text-sm font-normal mt-2 hidden transition duration-300">
                                             Thymeleaf를 사용하여 동적인 웹 페이지를 구성하고 시맨틱 태그를 활용할 수 있음.
-                                            스프링부트와 Thymeleaf를 함께 사용하여 웹 개발할 수 있음.
+                                            스프링 부트와 Thymeleaf를 함께 사용하여 웹 개발할 수 있음.
                                         </span>
                                     </div>
                                     
@@ -388,7 +401,7 @@
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
                                                 <i class="fa-regular fa-star"></i>
                                             </span>
                                         </div>
@@ -427,7 +440,7 @@
                                             </span>
                                         </div>
                                         <span class="text-sm font-normal">
-                                            네이버 클라우드 플랫폼, Termius, CI/CD 파이프라인, Docker 컨테이너, Jenkins, GitHub Actions를 활용한 스프링부트 애플리케이션의 기본적인 배포 방법을 직접 경험해보았지만 배포에 대한 추가적인 학습이 필요함.
+                                            네이버 클라우드 플랫폼, Termius, CI/CD 파이프라인, Docker 컨테이너, Jenkins, GitHub Actions를 활용한 스프링 부트 애플리케이션의 기본적인 배포 방법을 직접 경험해보았지만 배포에 대한 추가적인 학습이 필요함.
                                         </span>
                                     </div>
                                     
