@@ -83,8 +83,9 @@
             });
         });
         
+        // 설명 토글
         function toggleExplanation(button) {
-            // 설명 부분을 찾기 위해 부모 요소 내의 다음 sibling을 찾음
+            // 설명 부분을 찾기 위해 부모 요소 내의 다음 형제 엘리먼트를 찾음
             const explanation = button.parentElement.nextElementSibling;
         
             // 설명 부분을 토글
@@ -310,7 +311,7 @@
                                                 <i class="fa-solid fa-chevron-down"></i>
                                             </button>
                                         </div>
-                                        <div class="text-sm font-normal mt-2 hidden transition duration-300">
+                                        <span class="text-sm font-normal mt-2 hidden transition duration-300">
                                             Thymeleaf를 사용하여 동적인 웹 페이지를 구성하고 시맨틱 태그를 활용할 수 있음.
                                             스프링 부트와 Thymeleaf를 함께 사용하여 웹 개발할 수 있음.
                                         </span>
