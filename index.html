@@ -91,6 +91,14 @@
             // 설명 부분을 토글
             explanation.classList.toggle('hidden');
         }
+        
+        document.getElementById('openModal').addEventListener('click', function() {
+            document.getElementById('project_detail_modal').classList.remove('hidden');
+        });
+        
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('project_detail_modal').classList.add('hidden');
+        });
     </script>
 </head>
 
@@ -613,41 +621,45 @@
                 </nav>
             </div>
             
-            <div class="project_detail_modal">
-                <div class="flex-col">
-                    <div>
-                        <i class="fa-solid fa-xmark"></i>
-                    </div>
-                    <div class="project_thumbnail">프로젝트 썸네일 이미지 또는 로고 이미지</div>
-                    <div class="project_title">프로젝트 제목란</div>
-                    <div class="flex">
-                        <div class="project_detail_left_box">
-                            <div class="projects_date_icon">프로젝트 개발 기간 아이콘</div>
-                            <div class="projects_crew_icon">프로젝트 개발 인원 아이콘</div>
-                            <div class="projects_skillStackKeyword_icon">기술스택에 관한 키워드 아이콘</div>
-                            <div class="projects_briefExplanation_icon">한줄소개 아이콘</div>
-                            <div class="projects_githubURL_icon">깃허브 주소 아이콘</div>
-                            <div class="projects_youtube">시연 영상</div>
+            <div id="project_detail_modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                <div class="bg-white p-6 rounded-lg relative">
+                    <!-- 모달 내용 -->
+                    <div class="flex-col">
+                        <div>
+                            <!-- 모달 닫기 아이콘 -->
+                            <i id="closeModal" class="fa-solid fa-xmark absolute top-2 right-2 cursor-pointer text-xl"></i>
                         </div>
-                        <div class="project_detail_right_box">
-                            <div class="project_date">0000.00.00 ~ 0000.00.00</div>
-                            <div class="project_crew">0 명</div>
-                            <div class="project_skillStackKeyword">~</div>
-                            <div class="project_briefExplanation">~</div>
-                            <div class="project_githubURL">~</div>
-                            <div class="project_youtubeURL">시연 영상 띄울 것</div>
+                        <div class="project_thumbnail">프로젝트 썸네일 이미지 또는 로고 이미지</div>
+                        <div class="project_title">프로젝트 제목란</div>
+                        <div class="flex">
+                            <div class="project_detail_left_box">
+                                <div class="projects_date_icon">프로젝트 개발 기간 아이콘</div>
+                                <div class="projects_crew_icon">프로젝트 개발 인원 아이콘</div>
+                                <div class="projects_skillStackKeyword_icon">기술스택에 관한 키워드 아이콘</div>
+                                <div class="projects_briefExplanation_icon">한줄소개 아이콘</div>
+                                <div class="projects_githubURL_icon">깃허브 주소 아이콘</div>
+                                <div class="projects_youtube">시연 영상</div>
+                            </div>
+                            <div class="project_detail_right_box">
+                                <div class="project_date">0000.00.00 ~ 0000.00.00</div>
+                                <div class="project_crew">0 명</div>
+                                <div class="project_skillStackKeyword">~</div>
+                                <div class="project_briefExplanation">~</div>
+                                <div class="project_githubURL">~</div>
+                                <div class="project_youtubeURL">시연 영상 띄울 것</div>
+                            </div>
                         </div>
+                        <div class="detailExplanation">상세 설명</div>
+                        <div class="representativeImage">대표 이미지</div>
+                        <div class="troubleShooting">
+                            <div class="trouble">트러블슈팅 문제</div>
+                            <div class="cause">트러블슈팅 원인</div>
+                            <div class="solution">트러블슈팅 해결</div>
+                            <div class="lessonsLearned">트러블슈팅 교훈</div>
+                        </div>
+                        <div class="myRole">내 역할</div>
+                        <div class="resultsAndImpressions">결과 및 소감</div>
                     </div>
-                    <div class="detailExplanation">상세 설명</div>
-                    <div class="representativeImage">대표 이미지</div>
-                    <div class="troubleShooting">
-                        <div class="trouble">트러블슈팅 문제</div>
-                        <div class="cause">트러블슈팅 원인</div>
-                        <div class="solution">트러블슈팅 해결</div>
-                        <div class="lessonsLearned">트러블슈팅 교훈</div>
-                    </div>
-                    <div class="myRole">내 역할</div>
-                    <div class="resultsAndImpressions">결과 및 소감</div>
                 </div>
             </div>
         </section>
