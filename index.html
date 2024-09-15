@@ -75,6 +75,17 @@
             // PDF 변환 및 다운로드 실행
             html2pdf().from(element).set(opt).save();
         }
+        
+        // 부드러운 스크롤 이동 함수
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </head>
 
