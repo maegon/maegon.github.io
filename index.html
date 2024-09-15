@@ -6,10 +6,6 @@
     <title>임재원 포트폴리오</title>
     
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
         @font-face {
             font-family: 'Pretendard-Regular';
             src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
@@ -29,24 +25,30 @@
     <!-- html2pdf.js 라이브러리 추가 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
     
+    <!-- jQuery 라이브러리 추가 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    
     <!-- 자바스크립트 -->
     <script>
         // 테일윈드 설정에서 다크 모드 활성화
         tailwind.config = {
           darkMode: 'class',
         }
-        
-        // 페이지 로드 시 테마를 확인하고 적용
-        document.addEventListener('DOMContentLoaded', function () {
-            const theme = localStorage.getItem('theme');
-            if (theme === 'light') {
-                document.documentElement.classList.remove('dark');
-                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
-            } else {
-                document.documentElement.classList.add('dark');
-                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
-            }
-        });
+    
+        // PDF 다운로드 함수
+        function togglePDF() {
+            var element = document.getElementById('main-pdf');
+            var opt = {
+                margin:       0.5,
+                filename:     '임재원 portfolio.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 1 },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+            };
+            // PDF 변환 및 다운로드 실행
+            html2pdf().from(element).set(opt).save();
+        }
     
         // 테마 전환 함수
         function toggleTheme() {
@@ -60,21 +62,26 @@
                 document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
             }
         }
-        
-        // PDF 다운로드 함수
-        function togglePDF() {
-            var element = document.getElementById('main-pdf');
-            var opt = {
-                margin:       0.5,
-                filename:     '임재원 portfolio.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 1 },
-                jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
-            };
     
-            // PDF 변환 및 다운로드 실행
-            html2pdf().from(element).set(opt).save();
-        }
+        // 페이지 로드 시 테마를 확인하고 적용
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.documentElement.classList.remove('dark');
+                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-moon"></i>';
+            } else {
+                document.documentElement.classList.add('dark');
+                document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
+            
+            // jQuery를 사용한 부드러운 스크롤
+            $('a').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 500);
+            });
+        });
     </script>
 </head>
 
