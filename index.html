@@ -24,7 +24,14 @@
         
         /* 'active' 클래스가 적용된 사이드 메뉴 항목에 대한 스타일 */
         nav ul li.active {
-            background-color: #38bdf8; /* 선택된 메뉴 항목의 배경색 */
+            background-color: #333333; /* 선택된 메뉴 항목의 배경색 */
+        }
+        
+        /* 다크 모드에서의 active 스타일 */
+        @media (prefers-color-scheme: dark) {
+            nav ul li.active {
+                background-color: #666666; /* 다크 모드에서 회색 */
+            }
         }
     </style>
     
