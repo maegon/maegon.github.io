@@ -103,15 +103,6 @@
                 }, 500);
             });
             
-            // 프로젝트 모달 열기
-            $('#openModal').on('click', function () {
-                $('#project_detail_modal').removeClass('hidden');
-            });
-            
-            // 프로젝트 모달 닫기
-            $('#closeModal').on('click', function () {
-                $('#project_detail_modal').addClass('hidden');
-            });
         });
         
         // 설명 토글
@@ -176,15 +167,6 @@
     <!-- 사이드 메뉴 -->
     <nav class="text-center w-20 h-full bg-gray-200 dark:bg-gray-700 shadow-lg py-4 flex flex-col z-40 fixed top-16">
         <ul class="flex flex-col justify-between">
-            <!-- 홈 아이콘 -->
-            <li class="group relative my-4 last:mb-0">
-                <a href="#home" class="flex justify-center">
-                    <i class="fa-solid fa-house text-2xl text-gray-600 dark:text-gray-300"></i>
-                </a>
-                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                Home
-            </span>
-            </li>
             
             <!-- 소개 아이콘 -->
             <li class="group relative my-4 last:mb-0">
@@ -192,7 +174,7 @@
                     <i class="fa-solid fa-address-card text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
                 <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                About
+                About Me
             </span>
             </li>
             
@@ -240,30 +222,6 @@
     
     <!-- 메인 부분 -->
     <div id="main-pdf" class="flex flex-col w-full mr-4 lg:ml-24">
-        <!-- 홈 섹션 -->
-        <section id="home" class="min-h-screen py-12 flex flex-col justify-start mx-20">
-<!--            <div class="container max-w-full text-center flex flex-col items-center mt-10">-->
-<!--                <div class="relative">-->
-<!--                    &lt;!&ndash; 화살표와 설명 &ndash;&gt;-->
-<!--                    <div class="absolute top-6 bottom-10 left-10 flex flex-col items-center">-->
-<!--                        <i class="fa-solid fa-arrow-up text-blue-600 text-2xl"></i>-->
-<!--                        <div class="text-blue-600 font-semibold w-40">PDF 파일로 다운로드</div>-->
-<!--                    </div>-->
-<!--                    <div class="absolute top-6 bottom-10 left-10 flex flex-col items-center">-->
-<!--                        <i class="fa-solid fa-arrow-up text-blue-600 text-2xl"></i>-->
-<!--                        <div class="text-blue-600 font-semibold">다크/라이트 모드 전환</div>-->
-<!--                    </div>-->
-<!--                    <div class="absolute top-10 left-5 flex flex-col items-center">-->
-<!--                        <div class="text-blue-600 font-semibold">메인 메뉴</div>-->
-<!--                        <i class="fa-solid fa-arrow-left text-blue-600 text-2xl"></i>-->
-<!--                    </div>-->
-<!--                    <div class="absolute top-40 left-60 flex flex-col items-center">-->
-<!--                        <div class="text-blue-600 font-semibold">서브 메뉴</div>-->
-<!--                        <i class="fa-solid fa-arrow-left text-blue-600 text-2xl"></i>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-        </section>
         
         <!-- 소개 섹션 -->
         <section id="about" class="py-12 flex flex-col justify-start mx-20">
@@ -629,81 +587,15 @@
             </div>
         </section>
         
-        <!-- 프로젝트 섹션 -->
+        <!-- 프로젝트1 섹션 -->
         <section id="projects" class="py-12 flex flex-col justify-start mx-20">
             <div class="container max-w-full text-start flex flex-col mt-10">
-                <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">PROJECTS</span>
-                <nav>
-                    <ul>
-                        <li>
-                            <div id="openModal" class="bg-blue-500 text-white p-2 rounded cursor-pointer">
-                                최종 프로젝트
-                            </div>
-                        </li>
-                        <li>
-                            <div id="openModal" class="bg-blue-500 text-white p-2 rounded cursor-pointer">
-                                중급 프로젝트
-                            </div>
-                        </li>
-                        <li>
-                            <div id="openModal" class="bg-blue-500 text-white p-2 rounded cursor-pointer">
-                                초급 프로젝트
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
+                <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">PROJECTS - 1</span>
+                
             </div>
         </section>
         
-        <div id="project_detail_modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-            <div class="bg-white p-6 rounded-lg relative">
-                <!-- 모달 내용 -->
-                <div class="flex-col">
-                    <div>
-                        <!-- 모달 닫기 아이콘 -->
-                        <i id="closeModal" class="fa-solid fa-xmark absolute top-2 right-2 cursor-pointer text-xl"></i>
-                    </div>
-                    <div class="project_thumbnail">프로젝트 썸네일 이미지 또는 로고 이미지</div>
-                    <div class="project_title">프로젝트 제목란</div>
-                    <div class="flex">
-                        <div class="project_detail_left_box">
-                            <div class="projects_date_icon">프로젝트 개발 기간 아이콘</div>
-                            <div class="projects_crew_icon">프로젝트 개발 인원 아이콘</div>
-                            <div class="projects_skillStackKeyword_icon">기술스택에 관한 키워드 아이콘</div>
-                            <div class="projects_briefExplanation_icon">한줄소개 아이콘</div>
-                            <div class="projects_githubURL_icon">깃허브 주소 아이콘</div>
-                            <div class="projects_youtube">시연 영상</div>
-                        </div>
-                        <div class="project_detail_right_box">
-                            <div class="project_date">0000.00.00 ~ 0000.00.00</div>
-                            <div class="project_crew">0 명</div>
-                            <div class="project_skillStackKeyword">~</div>
-                            <div class="project_briefExplanation">~</div>
-                            <div class="project_githubURL">~</div>
-                            <div class="project_youtubeURL">시연 영상 띄울 것</div>
-                        </div>
-                    </div>
-                    <div class="detailExplanation">상세 설명</div>
-                    <div class="representativeImage">대표 이미지</div>
-                    <div class="troubleShooting">
-                        <div class="trouble">트러블슈팅 문제</div>
-                        <div class="cause">트러블슈팅 원인</div>
-                        <div class="solution">트러블슈팅 해결</div>
-                        <div class="lessonsLearned">트러블슈팅 교훈</div>
-                    </div>
-                    <div class="myRole">내 역할</div>
-                    <div class="resultsAndImpressions">결과 및 소감</div>
-                </div>
-            </div>
-        </div>
         
-        <!-- 연락 섹션 -->
-        <section id="contact" class="py-12 flex flex-col justify-start mx-20">
-            <div class="container max-w-full text-start flex flex-col mt-10">
-                <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">CONTACT</span>
-            
-            </div>
-        </section>
     </div>
 </div>
 
