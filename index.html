@@ -144,7 +144,7 @@
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    if (pageYOffset >= sectionTop - sectionHeight / 4) {
                         current = section.getAttribute('id'); // 현재 섹션의 id를 가져옴
                     }
                 });
