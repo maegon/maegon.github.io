@@ -180,95 +180,88 @@
 
 <div class="flex flex-col lg:flex-row">
     <!-- 사이드 메뉴 -->
-    <nav id="side-menu" class="text-center w-screen lg:w-20 h-screen bg-gray-200 dark:bg-gray-700 bg-opacity-90 shadow-lg py-4 flex flex-col z-40 fixed top-0 left-0 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
-        <ul class="flex flex-row lg:flex-col justify-around lg:justify-between h-full">
-            <!-- 닫기 버튼 (모바일 전용) -->
-            <li class="flex justify-end pr-4 lg:hidden">
-                <button onclick="toggleMenu()" class="text-gray-600 dark:text-gray-300">
-                    <i class="fa-solid fa-times text-2xl"></i>
-                </button>
-            </li>
-
+    <nav id="side-menu" class="w-full lg:w-20 bg-gray-200 dark:bg-gray-700 shadow-lg py-2 flex overflow-x-auto lg:flex-col lg:h-screen lg:fixed lg:top-16 lg:left-0 lg:overflow-visible z-40">
+        <ul class="flex flex-row lg:flex-col justify-around lg:justify-between w-full lg:h-full">
             <!-- 소개 아이콘 -->
-            <li class="group relative my-4 last:mb-0">
+            <li class="group relative my-2 lg:my-4">
                 <a href="#about" class="flex justify-center">
                     <i class="fa-solid fa-address-card text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                About Me
-            </span>
+                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    About Me
+                </span>
             </li>
-            
+
             <!-- 스킬 아이콘 -->
-            <li class="group relative my-4 last:mb-0">
+            <li class="group relative my-2 lg:my-4">
                 <a href="#skills" class="flex justify-center">
                     <i class="fa-solid fa-screwdriver-wrench text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                Skills
-            </span>
+                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Skills
+                </span>
             </li>
-            
+
             <!-- 프로젝트1 아이콘 -->
-            <li class="group relative my-4 last:mb-0">
+            <li class="group relative my-2 lg:my-4">
                 <a href="#projects1" class="flex justify-center">
                     <div class="rounded-full bg-gray-600 text-white w-8 h-8 flex items-center justify-center">
                         P1
                     </div>
                 </a>
-                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                Team Project - 1
-            </span>
+                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Team Project - 1
+                </span>
             </li>
-            
+
             <!-- 프로젝트2 아이콘 -->
-            <li class="group relative my-4 last:mb-0">
+            <li class="group relative my-2 lg:my-4">
                 <a href="#projects2" class="flex justify-center">
                     <div class="rounded-full bg-gray-600 text-white w-8 h-8 flex items-center justify-center">
                         P2
                     </div>
                 </a>
-                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                Team Project - 2
-            </span>
+                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Team Project - 2
+                </span>
             </li>
-            
+
             <!-- 프로젝트3 아이콘 -->
-            <li class="group relative my-4 last:mb-0">
+            <li class="group relative my-2 lg:my-4">
                 <a href="#projects3" class="flex justify-center">
                     <div class="rounded-full bg-gray-600 text-white w-8 h-8 flex items-center justify-center">
                         P3
                     </div>
                 </a>
-                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                Personal Project
-            </span>
+                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Personal Project
+                </span>
             </li>
-            
-            <li class="border-b border-gray-400 dark:border-gray-100 mt-40 my-4"></li>
+
             <!-- 깃허브 아이콘 -->
-            <li class="group relative my-4 last:mb-0">
+            <li class="group relative my-2 lg:my-4">
                 <a href="https://github.com/maegon" target="_blank" class="flex justify-center">
                     <i class="fa-brands fa-github text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                GitHub
-            </span>
+                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    GitHub
+                </span>
             </li>
+
             <!-- 유튜브 아이콘 -->
-            <li class="group relative my-4 last:mb-0">
+            <li class="group relative my-2 lg:my-4">
                 <a href="https://www.youtube.com/@%EC%9E%84%EC%9E%AC%EC%9B%90-b6g" target="_blank" class="flex justify-center">
                     <i class="fa-brands fa-youtube text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                YouTube
-            </span>
+                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    YouTube
+                </span>
             </li>
         </ul>
     </nav>
     
     <!-- 메인 부분 -->
-    <div id="main-pdf" class="flex flex-col w-full lg:w-auto mr-0 lg:mr-4 lg:ml-24 mt-20 lg:mt-0">
+    <div id="main-pdf" class="flex flex-col w-full lg:w-auto mt-16 lg:mt-0 lg:ml-24">
         
         <!-- 소개 섹션 -->
         <section id="about" class="py-12 flex flex-col justify-start mx-5 lg:mx-20">
