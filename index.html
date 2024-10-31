@@ -132,32 +132,32 @@
         
         
         
-<!--        // 섹션 감지 및 사이드 메뉴 활성화-->
-<!--        document.addEventListener('DOMContentLoaded', function () {-->
-<!--            const sections = document.querySelectorAll('section'); // 모든 섹션 선택-->
-<!--            const navItems = document.querySelectorAll('nav ul li a'); // 모든 사이드 메뉴 항목 선택-->
-<!--    -->
-<!--            window.addEventListener('scroll', () => {-->
-<!--                let current = '';-->
-<!--    -->
-<!--                // 현재 스크롤 위치를 감지하여 현재 보여지는 섹션을 찾음-->
-<!--                sections.forEach(section => {-->
-<!--                    const sectionTop = section.offsetTop;-->
-<!--                    const sectionHeight = section.clientHeight;-->
-<!--                    if (pageYOffset >= sectionTop - sectionHeight / 3) {-->
-<!--                        current = section.getAttribute('id'); // 현재 섹션의 id를 가져옴-->
-<!--                    }-->
-<!--                });-->
-<!--    -->
-<!--                // 모든 사이드 메뉴 항목에서 'active' 클래스 제거-->
-<!--                navItems.forEach(item => {-->
-<!--                    item.parentElement.classList.remove('active');-->
-<!--                    if (item.getAttribute('href').includes(current)) {-->
-<!--                        item.parentElement.classList.add('active'); // 현재 섹션에 해당하는 항목에 'active' 클래스 추가-->
-<!--                    }-->
-<!--                });-->
-<!--            });-->
-<!--        });-->
+        // 섹션 감지 및 사이드 메뉴 활성화
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section'); // 모든 섹션 선택
+            const navItems = document.querySelectorAll('nav ul li a'); // 모든 사이드 메뉴 항목 선택
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+
+                // 현재 스크롤 위치를 감지하여 현재 보여지는 섹션을 찾음
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute('id'); // 현재 섹션의 id를 가져옴
+                    }
+                });
+
+                // 모든 사이드 메뉴 항목에서 'active' 클래스 제거
+                navItems.forEach(item => {
+                    item.parentElement.classList.remove('active');
+                    if (item.getAttribute('href').includes(current)) {
+                        item.parentElement.classList.add('active'); // 현재 섹션에 해당하는 항목에 'active' 클래스 추가
+                    }
+                });
+            });
+        });
     </script>
 </head>
 
@@ -186,8 +186,8 @@
 
 <div class="flex flex-col lg:flex-row">
     <!-- 사이드 메뉴 -->
-    <nav id="side-menu" class="hidden w-full bg-gray-200 dark:bg-gray-700 shadow-lg py-4 z-40 transition-transform duration-300">
-        <ul class="flex flex-row lg:flex-col justify-around lg:justify-between">
+    <nav id="side-menu" class="hidden w-full bg-gray-200 dark:bg-gray-700 shadow-lg py-4 z-40 sticky top-16 transition-transform duration-300">
+        <ul class="flex flex-row lg:flex-row justify-around lg:justify-between">
             <!-- 소개 아이콘 -->
             <li class="group relative my-2 lg:my-4">
                 <a href="#about" class="flex justify-center">
