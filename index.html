@@ -56,7 +56,17 @@
         tailwind.config = {
           darkMode: 'class',
         }
-    
+
+        // 모바일 환경 토글 메뉴
+        function toggleMenu() {
+            const sideMenu = document.getElementById('side-menu');
+            if (sideMenu.classList.contains('-translate-x-full')) {
+                sideMenu.classList.remove('-translate-x-full');
+            } else {
+                sideMenu.classList.add('-translate-x-full');
+            }
+        }
+
         // PDF 다운로드 함수
         function togglePDF() {
             var element = document.getElementById('main-pdf');
@@ -160,14 +170,25 @@
         <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
             <span id="theme-icon"><i class="fa-solid fa-sun"></i></span>
         </button>
+
+        <!-- 모바일 햄버거 메뉴 아이콘 -->
+        <button onclick="toggleMenu()" class="block lg:hidden text-gray-800 dark:text-gray-200">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
     </div>
 </header>
 
 <div class="flex flex-col lg:flex-row">
     <!-- 사이드 메뉴 -->
-    <nav class="text-center w-20 h-full bg-gray-200 dark:bg-gray-700 shadow-lg py-4 flex flex-col z-40 fixed top-16">
-        <ul class="flex flex-row lg:flex-col justify-around lg:justify-between">
-            
+    <nav id="side-menu" class="text-center w-20 h-full bg-gray-200 dark:bg-gray-700 shadow-lg py-4 flex flex-col z-40 fixed top-16">
+        <ul class="flex flex-row lg:flex-col justify-around lg:justify-between h-full">
+            <!-- 닫기 버튼 (모바일 전용) -->
+            <li class="flex justify-end pr-4 lg:hidden">
+                <button onclick="toggleMenu()" class="text-gray-600 dark:text-gray-300">
+                    <i class="fa-solid fa-times text-2xl"></i>
+                </button>
+            </li>
+
             <!-- 소개 아이콘 -->
             <li class="group relative my-4 last:mb-0">
                 <a href="#about" class="flex justify-center">
