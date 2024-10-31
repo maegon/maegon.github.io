@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>임재원 포트폴리오</title>
-    
+
     <style>
         @font-face {
             font-family: 'Pretendard-Regular';
@@ -22,7 +22,6 @@
           color: inherit;
         }
 
-        
         /* 'active' 클래스가 적용된 사이드 메뉴 항목에 대한 스타일 */
         nav ul li.active {
             color: rgb(37 99 235);
@@ -164,39 +163,39 @@
 
 <body class="dark:bg-gray-900 dark:text-gray-300 bg-gray-100 text-gray-900">
 <!-- 헤더 -->
-<header class="flex justify-between items-center bg-gray-100 dark:bg-gray-800 h-16 p-4 shadow-md sticky top-0 z-50">
+<header class="flex justify-between items-center bg-gray-100 dark:bg-gray-800 h-16 p-4 shadow-md sticky top-0 z-50 w-full lg:w-auto">
     <span class="text-sm font-semibold text-black dark:text-white">신입 개발자 임재원 포트폴리오</span>
-    
-    <div class="set_box">
+
+    <div class="flex space-x-2">
         <!-- pdf 파일로 다운로드 버튼 -->
-        <button onclick="togglePDF()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
-            <span id="download-icon"><i class="fa-solid fa-file-pdf"></i></span>
+        <button onclick="togglePDF()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-1 px-2 rounded">
+            <i class="fa-solid fa-file-pdf"></i>
         </button>
-        
+
         <!-- 다크/라이트 모드 전환 버튼 -->
-        <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
-            <span id="theme-icon"><i class="fa-solid fa-sun"></i></span>
+        <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-1 px-2 rounded">
+            <i class="fa-solid fa-sun"></i>
         </button>
 
         <!-- 모바일 햄버거 메뉴 아이콘 -->
-        <button onclick="toggleMenu()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
-            <span id="menu-icon"><i class="fa-solid fa-bars text-xl"></i></span>
+        <button onclick="toggleMenu()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-1 px-2 rounded lg:hidden">
+            <i class="fa-solid fa-bars text-xl"></i>
         </button>
     </div>
 </header>
 
 <div class="flex flex-col lg:flex-row">
     <!-- 사이드 메뉴 -->
-    <nav id="side-menu" class="hidden w-full bg-gray-200 dark:bg-gray-700 shadow-lg z-40 sticky top-16 transition-transform duration-300">
-        <ul class="flex flex-row lg:flex-row justify-around lg:justify-around">
+    <nav id="side-menu" class="hidden lg:flex flex-col lg:flex-row bg-gray-200 dark:bg-gray-700 shadow-lg w-full lg:w-auto lg:h-auto sticky top-16 z-40 transition-transform duration-300">
+        <ul class="flex flex-col lg:flex-row justify-around lg:justify-start lg:space-x-4 p-2 lg:p-0">
             <!-- 소개 아이콘 -->
             <li class="group relative my-2 lg:my-4">
-                <a href="#about" class="flex justify-center">
+                <a href="#about" class="flex justify-center lg:justify-start">
                     <i class="fa-solid fa-address-card text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute top-16 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    About
-                </span>
+                <span class="pointer-events-none absolute top-8 lg:top-16 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                About
+            </span>
             </li>
 
             <!-- 스킬 아이콘 -->
@@ -269,53 +268,35 @@
     
     <!-- 메인 부분 -->
     <div id="main-pdf" class="flex flex-col w-full">
-        
+
         <!-- 소개 섹션 -->
-        <section id="about" class="py-12 flex flex-col justify-start mx-5 lg:mx-20">
-            <div class="container max-w-full text-start flex flex-col mt-10">
-                <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">ABOUT ME</span>
-                
-                <div class="flex mt-10">
-                    <div class="flex flex-col items-center mt-2">
-                        <img src="images/my_image.jpg" alt="프로필 이미지" class="w-32 h-32 md:w-64 md:h-64 my-2 rounded-full">
-                        <span class="text-xl mb-2 font-semibold text-black dark:text-white">임재원</span>
-                        <span class="text-lg mb-2 font-semibold text-black dark:text-white">JAVA BE 개발자</span>
-                    </div>
-                    
-                    <div class="flex flex-col flex-grow basis-1 ml-8">
-                        <span class="text-2xl pb-2 font-bold max-w-3xl" style="border-bottom: 4px solid #FF6F61;">소개말</span>
-                        <span class="text-lg mt-4">
-                            안녕하세요.<br>JAVA 백엔드 신입 개발자 임재원입니다.<br><br>
-                            새로운 기술을 배우고 기능을 구성할 때<br>해당 기술을 사용하면 어떨까?,<br><br>
-                            내가 상상한 그림을 실현하는 코딩에<br>재미를 느끼는 개발자입니다.
-                        </span>
-                    </div>
-                    <div class="flex flex-col flex-grow basis-1 ml-8">
-                        <span class="text-2xl pb-2 font-bold max-w-3xl" style="border-bottom: 4px solid #FFC107;">목표</span>
-                        <span class="text-lg mt-4">
-                            사용자에게 다양한 경험을 제공하고<br>팀워크와 협업을 중시하는 성장형 개발자,<br><br>
-                            제가 상상한 결과물을 실현하기 위해<br>새로운 기술을 받아들이고 이를 적용하려<br>노력하는 개발자가 되고자 합니다.
-                        </span>
-                    </div>
-                    
-                    <div class="text-base flex-grow basis-1 ml-8">
-                        <span class="text-lg pb-2 font-bold">
-                            최종학력
-                        </span>
-                        <br>
-                        세한대학교 항공교통물류학과 (졸업)
-                        <br>
-                        <br>
-                        <span class="text-lg pb-2 font-bold">
-                            자격증
-                        </span>
-                        <br>
-                        정보처리기능사, 운전면허 1종 보통, 컴퓨터활용능력 2급
-                    </div>
+        <section id="about" class="py-12 flex flex-col items-center text-center lg:text-left lg:items-start mx-5 lg:mx-20">
+            <div class="container max-w-full flex flex-col lg:flex-row mt-10">
+                <div class="flex flex-col items-center lg:items-start mt-2 lg:w-1/4">
+                    <img src="images/my_image.jpg" alt="프로필 이미지" class="w-24 h-24 md:w-32 md:h-32 lg:w-64 lg:h-64 my-2 rounded-full">
+                    <span class="text-lg md:text-xl font-semibold text-black dark:text-white">임재원</span>
+                    <span class="text-sm md:text-lg font-semibold text-black dark:text-white">JAVA BE 개발자</span>
+                </div>
+
+                <div class="flex flex-col mt-4 lg:w-1/2 lg:ml-8">
+                    <div class="text-2xl md:text-3xl font-bold mb-4">소개말</div>
+                    <p class="text-sm md:text-lg leading-relaxed">
+                        안녕하세요.<br>JAVA 백엔드 신입 개발자 임재원입니다.<br><br>
+                        새로운 기술을 배우고 기능을 구성할 때<br>해당 기술을 사용하면 어떨까?,<br><br>
+                        내가 상상한 그림을 실현하는 코딩에<br>재미를 느끼는 개발자입니다.
+                    </p>
+                </div>
+
+                <div class="flex flex-col mt-4 lg:w-1/4 lg:ml-8">
+                    <div class="text-2xl md:text-3xl font-bold mb-4">목표</div>
+                    <p class="text-sm md:text-lg leading-relaxed">
+                        사용자에게 다양한 경험을 제공하고<br>팀워크와 협업을 중시하는 성장형 개발자,<br><br>
+                        제가 상상한 결과물을 실현하기 위해<br>새로운 기술을 받아들이고 이를 적용하려<br>노력하는 개발자가 되고자 합니다.
+                    </p>
                 </div>
             </div>
         </section>
-        
+
         <!-- 스킬 섹션 -->
         <section id="skills" class="py-12 flex flex-col justify-start mx-5 lg:mx-20">
             <div class="container max-w-full text-start flex flex-col mt-10">
