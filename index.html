@@ -132,32 +132,32 @@
         
         
         
-        // 섹션 감지 및 사이드 메뉴 활성화
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('section'); // 모든 섹션 선택
-            const navItems = document.querySelectorAll('nav ul li a'); // 모든 사이드 메뉴 항목 선택
-    
-            window.addEventListener('scroll', () => {
-                let current = '';
-    
-                // 현재 스크롤 위치를 감지하여 현재 보여지는 섹션을 찾음
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                        current = section.getAttribute('id'); // 현재 섹션의 id를 가져옴
-                    }
-                });
-    
-                // 모든 사이드 메뉴 항목에서 'active' 클래스 제거
-                navItems.forEach(item => {
-                    item.parentElement.classList.remove('active');
-                    if (item.getAttribute('href').includes(current)) {
-                        item.parentElement.classList.add('active'); // 현재 섹션에 해당하는 항목에 'active' 클래스 추가
-                    }
-                });
-            });
-        });
+<!--        // 섹션 감지 및 사이드 메뉴 활성화-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            const sections = document.querySelectorAll('section'); // 모든 섹션 선택-->
+<!--            const navItems = document.querySelectorAll('nav ul li a'); // 모든 사이드 메뉴 항목 선택-->
+<!--    -->
+<!--            window.addEventListener('scroll', () => {-->
+<!--                let current = '';-->
+<!--    -->
+<!--                // 현재 스크롤 위치를 감지하여 현재 보여지는 섹션을 찾음-->
+<!--                sections.forEach(section => {-->
+<!--                    const sectionTop = section.offsetTop;-->
+<!--                    const sectionHeight = section.clientHeight;-->
+<!--                    if (pageYOffset >= sectionTop - sectionHeight / 3) {-->
+<!--                        current = section.getAttribute('id'); // 현재 섹션의 id를 가져옴-->
+<!--                    }-->
+<!--                });-->
+<!--    -->
+<!--                // 모든 사이드 메뉴 항목에서 'active' 클래스 제거-->
+<!--                navItems.forEach(item => {-->
+<!--                    item.parentElement.classList.remove('active');-->
+<!--                    if (item.getAttribute('href').includes(current)) {-->
+<!--                        item.parentElement.classList.add('active'); // 현재 섹션에 해당하는 항목에 'active' 클래스 추가-->
+<!--                    }-->
+<!--                });-->
+<!--            });-->
+<!--        });-->
     </script>
 </head>
 
