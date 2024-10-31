@@ -21,6 +21,24 @@
           text-decoration: none;
           color: inherit;
         }
+
+        /* 모바일 환경에서 너비 100% 설정 */
+        * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* 모바일 환경에서 사이드 메뉴와 메인 부분 여백 조정 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0;
+                margin: 0;
+            }
+            .mx-5 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
         
         /* 'active' 클래스가 적용된 사이드 메뉴 항목에 대한 스타일 */
         nav ul li.active {
