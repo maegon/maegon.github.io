@@ -57,13 +57,19 @@
           darkMode: 'class',
         }
 
-        // 모바일 환경 토글 메뉴
+        // 토글 메뉴
         function toggleMenu() {
             const sideMenu = document.getElementById('side-menu');
-            if (sideMenu.classList.contains('-translate-x-full')) {
-                sideMenu.classList.remove('-translate-x-full');
+            const header = document.querySelector('header');
+
+            // 메뉴가 열려 있는지 확인
+            if (sideMenu.classList.contains('hidden')) {
+                // 메뉴를 header 바로 아래에 표시
+                sideMenu.classList.remove('hidden');
+                header.insertAdjacentElement('afterend', sideMenu);
             } else {
-                sideMenu.classList.add('-translate-x-full');
+                // 메뉴를 숨김
+                sideMenu.classList.add('hidden');
             }
         }
 
@@ -172,22 +178,22 @@
         </button>
 
         <!-- 모바일 햄버거 메뉴 아이콘 -->
-        <button onclick="toggleMenu()" class="block lg:hidden text-gray-800 dark:text-gray-200">
-            <i class="fa-solid fa-bars text-2xl"></i>
+        <button onclick="toggleMenu()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
+            <span id="menu-icon"><i class="fa-solid fa-bars text-xl"></i></span>
         </button>
     </div>
 </header>
 
 <div class="flex flex-col lg:flex-row">
     <!-- 사이드 메뉴 -->
-    <nav id="side-menu" class="w-full lg:w-20 bg-gray-200 dark:bg-gray-700 shadow-lg py-2 flex overflow-x-auto lg:flex-col lg:h-screen lg:fixed lg:top-16 lg:left-0 lg:overflow-visible z-40">
-        <ul class="flex flex-row lg:flex-col justify-around lg:justify-between w-full lg:h-full">
+    <nav id="side-menu" class="hidden w-full bg-gray-200 dark:bg-gray-700 shadow-lg py-4 z-40 transition-transform duration-300">
+        <ul class="flex flex-row lg:flex-col justify-around lg:justify-between">
             <!-- 소개 아이콘 -->
             <li class="group relative my-2 lg:my-4">
                 <a href="#about" class="flex justify-center">
                     <i class="fa-solid fa-address-card text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     About Me
                 </span>
             </li>
@@ -197,7 +203,7 @@
                 <a href="#skills" class="flex justify-center">
                     <i class="fa-solid fa-screwdriver-wrench text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     Skills
                 </span>
             </li>
@@ -209,7 +215,7 @@
                         P1
                     </div>
                 </a>
-                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     Team Project - 1
                 </span>
             </li>
@@ -221,7 +227,7 @@
                         P2
                     </div>
                 </a>
-                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     Team Project - 2
                 </span>
             </li>
@@ -233,7 +239,7 @@
                         P3
                     </div>
                 </a>
-                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     Personal Project
                 </span>
             </li>
@@ -243,7 +249,7 @@
                 <a href="https://github.com/maegon" target="_blank" class="flex justify-center">
                     <i class="fa-brands fa-github text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     GitHub
                 </span>
             </li>
@@ -253,7 +259,7 @@
                 <a href="https://www.youtube.com/@%EC%9E%84%EC%9E%AC%EC%9B%90-b6g" target="_blank" class="flex justify-center">
                     <i class="fa-brands fa-youtube text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute left-1/2 lg:left-full lg:top-1/2 transform lg:-translate-y-1/2 -translate-x-1/2 lg:translate-x-0 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="pointer-events-none absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     YouTube
                 </span>
             </li>
@@ -261,7 +267,7 @@
     </nav>
     
     <!-- 메인 부분 -->
-    <div id="main-pdf" class="flex flex-col w-full lg:w-auto mt-16 lg:mt-0 lg:ml-24">
+    <div id="main-pdf" class="flex flex-col w-full lg:w-auto mt-16 lg:mt-0">
         
         <!-- 소개 섹션 -->
         <section id="about" class="py-12 flex flex-col justify-start mx-5 lg:mx-20">
