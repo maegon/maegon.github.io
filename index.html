@@ -12,21 +12,22 @@
             font-weight: 400;
             font-style: normal;
         }
-        
+
         body, ul, li {
           margin: 0; padding: 0; list-style: none;
         }
-        
+
         a {
           text-decoration: none;
           color: inherit;
         }
 
+
         /* 'active' 클래스가 적용된 사이드 메뉴 항목에 대한 스타일 */
         nav ul li.active {
             color: rgb(37 99 235);
         }
-        
+
         /* 다크 모드에서의 active 스타일 */
         @media (prefers-color-scheme: dark) {
             nav ul li.active {
@@ -34,22 +35,22 @@
             }
         }
     </style>
-    
+
     <!-- 테일윈드 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
           referrerpolicy="no-referrer"/>
-    
+
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     <!-- html2pdf.js 라이브러리 추가 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-    
+
     <!-- jQuery 라이브러리 추가 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    
+
+
     <!-- 자바스크립트 -->
     <script>
         // 테일윈드 설정에서 다크 모드 활성화
@@ -86,7 +87,7 @@
             // PDF 변환 및 다운로드 실행
             html2pdf().from(element).set(opt).save();
         }
-    
+
         // 테마 전환 함수
         function toggleTheme() {
             if (document.documentElement.classList.contains('dark')) {
@@ -99,7 +100,7 @@
                 document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
             }
         }
-    
+
         // 페이지 로드 시 테마를 확인하고 적용
         document.addEventListener('DOMContentLoaded', function () {
             const theme = localStorage.getItem('theme');
@@ -110,7 +111,7 @@
                 document.documentElement.classList.add('dark');
                 document.getElementById('theme-icon').innerHTML = '<i class="fa-solid fa-sun"></i>';
             }
-            
+
             // jQuery를 사용한 부드러운 스크롤
             $('a').on('click', function(e) {
                 e.preventDefault();
@@ -118,20 +119,20 @@
                     scrollTop: $(this.hash).offset().top
                 }, 500);
             });
-            
+
         });
-        
+
         // 설명 토글
         function toggleExplanation(button) {
             // 설명 부분을 찾기 위해 부모 요소 내의 다음 형제 엘리먼트를 찾음
             const explanation = button.parentElement.nextElementSibling;
-        
+
             // 설명 부분을 토글
             explanation.classList.toggle('hidden');
         }
-        
-        
-        
+
+
+
         // 섹션 감지 및 사이드 메뉴 활성화
         document.addEventListener('DOMContentLoaded', function () {
             const sections = document.querySelectorAll('section'); // 모든 섹션 선택
@@ -163,39 +164,39 @@
 
 <body class="dark:bg-gray-900 dark:text-gray-300 bg-gray-100 text-gray-900">
 <!-- 헤더 -->
-<header class="flex justify-between items-center bg-gray-100 dark:bg-gray-800 h-16 p-4 shadow-md sticky top-0 z-50 w-full lg:w-auto">
+<header class="flex justify-between items-center bg-gray-100 dark:bg-gray-800 h-16 p-4 shadow-md sticky top-0 z-50">
     <span class="text-sm font-semibold text-black dark:text-white">신입 개발자 임재원 포트폴리오</span>
 
-    <div class="flex space-x-2">
+    <div class="set_box">
         <!-- pdf 파일로 다운로드 버튼 -->
-        <button onclick="togglePDF()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-1 px-2 rounded">
-            <i class="fa-solid fa-file-pdf"></i>
+        <button onclick="togglePDF()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
+            <span id="download-icon"><i class="fa-solid fa-file-pdf"></i></span>
         </button>
 
         <!-- 다크/라이트 모드 전환 버튼 -->
-        <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-1 px-2 rounded">
-            <i class="fa-solid fa-sun"></i>
+        <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
+            <span id="theme-icon"><i class="fa-solid fa-sun"></i></span>
         </button>
 
         <!-- 모바일 햄버거 메뉴 아이콘 -->
-        <button onclick="toggleMenu()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-1 px-2 rounded lg:hidden">
-            <i class="fa-solid fa-bars text-xl"></i>
+        <button onclick="toggleMenu()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
+            <span id="menu-icon"><i class="fa-solid fa-bars text-xl"></i></span>
         </button>
     </div>
 </header>
 
 <div class="flex flex-col lg:flex-row">
     <!-- 사이드 메뉴 -->
-    <nav id="side-menu" class="hidden lg:flex flex-col lg:flex-row bg-gray-200 dark:bg-gray-700 shadow-lg w-full lg:w-auto lg:h-auto sticky top-16 z-40 transition-transform duration-300">
-        <ul class="flex flex-col lg:flex-row justify-around lg:justify-start lg:space-x-4 p-2 lg:p-0">
+    <nav id="side-menu" class="hidden w-full bg-gray-200 dark:bg-gray-700 shadow-lg z-40 sticky top-16 transition-transform duration-300">
+        <ul class="flex flex-row lg:flex-row justify-around lg:justify-around">
             <!-- 소개 아이콘 -->
             <li class="group relative my-2 lg:my-4">
-                <a href="#about" class="flex justify-center lg:justify-start">
+                <a href="#about" class="flex justify-center">
                     <i class="fa-solid fa-address-card text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
-                <span class="pointer-events-none absolute top-8 lg:top-16 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                About
-            </span>
+                <span class="pointer-events-none absolute top-16 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    About
+                </span>
             </li>
 
             <!-- 스킬 아이콘 -->
@@ -265,34 +266,52 @@
             </li>
         </ul>
     </nav>
-    
+
     <!-- 메인 부분 -->
     <div id="main-pdf" class="flex flex-col w-full">
 
         <!-- 소개 섹션 -->
-        <section id="about" class="py-12 flex flex-col items-center text-center lg:text-left lg:items-start mx-5 lg:mx-20">
-            <div class="container max-w-full flex flex-col lg:flex-row mt-10">
-                <div class="flex flex-col items-center lg:items-start mt-2 lg:w-1/4">
-                    <img src="images/my_image.jpg" alt="프로필 이미지" class="w-24 h-24 md:w-32 md:h-32 lg:w-64 lg:h-64 my-2 rounded-full">
-                    <span class="text-lg md:text-xl font-semibold text-black dark:text-white">임재원</span>
-                    <span class="text-sm md:text-lg font-semibold text-black dark:text-white">JAVA BE 개발자</span>
-                </div>
+        <section id="about" class="py-12 flex flex-col justify-start mx-5 lg:mx-20">
+            <div class="container max-w-full text-start flex flex-col mt-10">
+                <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">ABOUT ME</span>
 
-                <div class="flex flex-col mt-4 lg:w-1/2 lg:ml-8">
-                    <div class="text-2xl md:text-3xl font-bold mb-4">소개말</div>
-                    <p class="text-sm md:text-lg leading-relaxed">
-                        안녕하세요.<br>JAVA 백엔드 신입 개발자 임재원입니다.<br><br>
-                        새로운 기술을 배우고 기능을 구성할 때<br>해당 기술을 사용하면 어떨까?,<br><br>
-                        내가 상상한 그림을 실현하는 코딩에<br>재미를 느끼는 개발자입니다.
-                    </p>
-                </div>
+                <div class="flex mt-10">
+                    <div class="flex flex-col items-center mt-2">
+                        <img src="images/my_image.jpg" alt="프로필 이미지" class="w-32 h-32 md:w-64 md:h-64 my-2 rounded-full">
+                        <span class="text-xl mb-2 font-semibold text-black dark:text-white">임재원</span>
+                        <span class="text-lg mb-2 font-semibold text-black dark:text-white">JAVA BE 개발자</span>
+                    </div>
 
-                <div class="flex flex-col mt-4 lg:w-1/4 lg:ml-8">
-                    <div class="text-2xl md:text-3xl font-bold mb-4">목표</div>
-                    <p class="text-sm md:text-lg leading-relaxed">
-                        사용자에게 다양한 경험을 제공하고<br>팀워크와 협업을 중시하는 성장형 개발자,<br><br>
-                        제가 상상한 결과물을 실현하기 위해<br>새로운 기술을 받아들이고 이를 적용하려<br>노력하는 개발자가 되고자 합니다.
-                    </p>
+                    <div class="flex flex-col flex-grow basis-1 ml-8">
+                        <span class="text-2xl pb-2 font-bold max-w-3xl" style="border-bottom: 4px solid #FF6F61;">소개말</span>
+                        <span class="text-lg mt-4">
+                            안녕하세요.<br>JAVA 백엔드 신입 개발자 임재원입니다.<br><br>
+                            새로운 기술을 배우고 기능을 구성할 때<br>해당 기술을 사용하면 어떨까?,<br><br>
+                            내가 상상한 그림을 실현하는 코딩에<br>재미를 느끼는 개발자입니다.
+                        </span>
+                    </div>
+                    <div class="flex flex-col flex-grow basis-1 ml-8">
+                        <span class="text-2xl pb-2 font-bold max-w-3xl" style="border-bottom: 4px solid #FFC107;">목표</span>
+                        <span class="text-lg mt-4">
+                            사용자에게 다양한 경험을 제공하고<br>팀워크와 협업을 중시하는 성장형 개발자,<br><br>
+                            제가 상상한 결과물을 실현하기 위해<br>새로운 기술을 받아들이고 이를 적용하려<br>노력하는 개발자가 되고자 합니다.
+                        </span>
+                    </div>
+
+                    <div class="text-base flex-grow basis-1 ml-8">
+                        <span class="text-lg pb-2 font-bold">
+                            최종학력
+                        </span>
+                        <br>
+                        세한대학교 항공교통물류학과 (졸업)
+                        <br>
+                        <br>
+                        <span class="text-lg pb-2 font-bold">
+                            자격증
+                        </span>
+                        <br>
+                        정보처리기능사, 운전면허 1종 보통, 컴퓨터활용능력 2급
+                    </div>
                 </div>
             </div>
         </section>
@@ -323,7 +342,7 @@
                                                     <i class="fa-regular fa-star"></i>
                                                 </span>
                                             </div>
-                                            
+
                                             <!-- 설명을 토글하기 위한 아이콘 -->
                                             <button onclick="toggleExplanation(this)" class="ml-2 focus:outline-none">
                                                 <i class="fa-solid fa-chevron-down"></i>
@@ -334,7 +353,7 @@
                                             스프링 부트와 Thymeleaf를 함께 사용하여 웹 개발할 수 있음.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="flex-col border-4 border-blue-400  mx-4 my-6 p-4">
                                         <div class="flex justify-between items-center">
                                             <div>
@@ -347,7 +366,7 @@
                                                     <i class="fa-regular fa-star"></i>
                                                 </span>
                                             </div>
-                                            
+
                                             <!-- 설명을 토글하기 위한 아이콘 -->
                                             <button onclick="toggleExplanation(this)" class="ml-2 focus:outline-none">
                                                 <i class="fa-solid fa-chevron-down"></i>
@@ -358,7 +377,7 @@
                                             다만, 더 복잡한 CSS 애니메이션이나 고급 CSS 트릭은 잘 다루지 못함.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="flex-col border-4 border-yellow-400  mx-4 my-6 p-4">
                                         <div class="flex justify-between items-center">
                                             <div>
@@ -381,7 +400,7 @@
                                             React, Sveltekit와 같은 프레임워크를 사용한 고급 JavaScript 패턴을 잘 다루지 못함.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="flex-col border-4 border-purple-400  mx-4 my-6 p-4">
                                         <div class="flex justify-between items-center">
                                             <div>
@@ -403,7 +422,7 @@
                                             Tailwind CSS를 사용하여 반응형 디자인을 구현할 수 있지만 디바이스에서 레이아웃이 망가지지 않도록 조정하는데 능숙치 못함.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="text-lg font-normal mx-6 mt-10">
                                         HTML, CSS, JavaScript를 사용하여 웹 페이지를 만들고, 반응형 웹 디자인을 구현할 수 있습니다.
                                         그러나 React, Sveltekit 등과 같은 프론트엔드 프레임워크에 대한 경험이 많지 않고,
@@ -437,7 +456,7 @@
                                             스프링 부트의 의존성 주입(DI), MVC 패턴 활용, 데이터베이스 연동 및 Thymeleaf을 통한 뷰 레이어 통합할 수 있음.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="flex-col border-4 border-green-400  mx-4 my-6 p-4">
                                         <div class="flex justify-between items-center">
                                             <div>
@@ -461,7 +480,7 @@
                                             복잡한 쿼리나 성능 최적화, 데이터베이스 트랜잭션 관리에 대해 추가적인 학습이 필요함.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="flex-col border-4 border-indigo-400  mx-4 my-6 p-4">
                                         <div class="flex justify-between items-center">
                                             <div>
@@ -483,7 +502,7 @@
                                             RESTful API를 설계하고 JSON을 사용하여 클라이언트와 서버 간 데이터를 교환하고 Ajax를 통해 비동기 통신을 처리할 수 있지만 GraphQL과 같은 API 설계 방식이나 고급 RESETful API 설계 패턴에 대한 경험이 없음.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="flex-col border-4 border-gray-400  mx-4 my-6 p-4">
                                         <div class="flex justify-between items-center">
                                             <div>
@@ -505,7 +524,7 @@
                                             네이버 클라우드 플랫폼, Termius, CI/CD 파이프라인, Docker 컨테이너, Jenkins, GitHub Actions를 활용한 스프링 부트 애플리케이션의 기본적인 배포 방법을 직접 경험해보았지만 배포에 대한 추가적인 학습이 필요함.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="text-lg font-normal mx-6 mt-10">
                                         스프링 부트를 사용하여 웹 애플리케이션을 개발하고 데이터 베이스와 연동하며, RESTful API를 구축하는데 익숙합니다. 그러나 보안 및 고급 아키텍처 설계, 클라우드 배포 등에서 더 고급 기술을 적용하는 부분은 추가 학습이 필요합니다.
                                     </div>
@@ -535,8 +554,8 @@
                                             프로젝트의 변경 사항을 추적하고, 브랜치(git branch, git checkout, git merge)를 활용하여 여러 작업을 분리하여 관리하는 것에 익숙함.
                                         </span>
                                     </div>
-                                    
-                                    
+
+
                                     <div class="flex-col border-4 border-blue-600  mx-4 my-6 p-4">
                                         <div class="flex justify-between items-center">
                                             <div>
@@ -558,7 +577,7 @@
                                             branch를 사용하여 작업을 분리하고 branch 병합하여 변경 사항을 통합하는 작업을 수행할 수 있고 협업을 위한 깃허브 워크플로우, 예를 들어, 풀 리퀘스트(Pull Request)를 생성하고 검토하는 것, 코드 리뷰를 통한 협업을 경험해봤으며 충돌 에러에 대한 대처를 할 수 있음.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="flex-col border-4 border-blue-400  mx-4 my-6 p-4">
                                         <div class="flex justify-between items-center">
                                             <div>
@@ -581,7 +600,7 @@
                                             깃허브의 고급 기능인 GitHub Actions를 배포 구현 시 사용한 적이 있으나 추가 학습이 필요함.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="flex-col border-4 border-yellow-400  mx-4 my-6 p-4">
                                         <div class="flex justify-between items-center">
                                             <div>
@@ -603,7 +622,7 @@
                                             깃허브 리포지터리의 README 파일에 마크다운을 사용하여 프로젝트를 소개할 수 있으나 깃허브를 통한 포트폴리오 프로젝트의 체계적인 문서화, 예를 들어 깃허브 위키(GitHub Wiki)나 깃허브 프로젝트(GitHub Projects) 기능을 활용한 고급 문서화 및 프로젝트 관리 경험이 없음.
                                         </span>
                                     </div>
-                                    
+
                                     <div class="text-lg font-normal mx-6 mt-10">
                                         깃과 깃허브의 기본적인 사용법을 알고, 로컬 및 원격 저장소 관리, 브랜치 활용, 간단한 협업을 수행할 수 있습니다. 깃 고급 기능 및 프로젝트 문서화를 위한 깃허브의 고급 기능에 대해 추가 학습이 필요합니다.
                                     </div>
@@ -614,7 +633,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- 프로젝트1 섹션 -->
         <section id="projects1" class="py-12 flex flex-col justify-start mx-5 lg:mx-20">
             <div class="container max-w-full text-start flex flex-col mt-10">
@@ -647,24 +666,24 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- 프로젝트2 섹션 -->
         <section id="projects2" class="py-12 flex flex-col justify-start mx-5 lg:mx-20">
             <div class="container max-w-full text-start flex flex-col mt-10">
                 <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">Team Project - 2</span>
-            
+
             </div>
         </section>
-        
+
         <!-- 프로젝트1 섹션 -->
         <section id="projects3" class="py-12 flex flex-col justify-start mx-5 lg:mx-20">
             <div class="container max-w-full text-start flex flex-col mt-10">
                 <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">Personal Project</span>
-            
+
             </div>
         </section>
-    
-    
+
+
     </div>
 </div>
 
