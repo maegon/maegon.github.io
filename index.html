@@ -247,7 +247,7 @@
 
             <!-- 깃허브 아이콘 -->
             <li class="group relative my-2 lg:my-4">
-                <a href="https://github.com/maegon" target="_blank" class="flex justify-center">
+                <a href="https://github.com/maegon" target="_blank" class="flex justify-center" onclick="window.open(this.href, '_blank'); return false;">
                     <i class="fa-brands fa-github text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
                 <span class="pointer-events-none absolute top-16 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -257,7 +257,7 @@
 
             <!-- 유튜브 아이콘 -->
             <li class="group relative my-2 lg:my-4">
-                <a href="https://www.youtube.com/@%EC%9E%84%EC%9E%AC%EC%9B%90-b6g" target="_blank" class="flex justify-center">
+                <a href="https://www.youtube.com/@%EC%9E%84%EC%9E%AC%EC%9B%90-b6g" target="_blank" class="flex justify-center" onclick="window.open(this.href, '_blank'); return false;">
                     <i class="fa-brands fa-youtube text-2xl text-gray-600 dark:text-gray-300"></i>
                 </a>
                 <span class="pointer-events-none absolute top-16 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -641,13 +641,13 @@
 
                 <!-- 프로젝트 내용 -->
                 <div class="flex items-center">
-                    <div class="text-3xl font-semibold mt-4">Art Auction</div>
-                    <div class="text-xl text-gray-700 dark:text-gray-300">온라인 미술품 경매 사이트</div>
+                    <div class="text-4xl font-semibold mt-4">Art Auction</div>
+                    <div class="text-xl text-gray-700 dark:text-gray-300 ml-4 mt-4">온라인 미술품 경매 사이트</div>
                 </div>
                 <br>
 
                 <!-- 썸네일 -->
-                <img src="images/ArtAuction main image.jpg" alt="프로젝트 썸네일 또는 로고 이미지" class="w-full h-full md:w-2/3 md:h-1/3 my-2">
+                <img src="images/ArtAuction main image.jpg" alt="프로젝트 썸네일 또는 로고 이미지" class="w-full h-full md:w-2/3 md:h-2/3 my-2">
 
                 <!-- 상세 설명 -->
                 <div class="space-y-4">
@@ -657,14 +657,39 @@
                         <span>2024.00.00 ~ 2024.00.00</span>
                     </div>
                     <div class="flex items-center">
+                        <i class="fa-brands fa-chromecast mr-2"></i>
+                        <span class="font-bold mr-2">플랫폼 :</span>
+                        <span>web</span>
+                    </div>
+                    <div class="flex items-center">
                         <i class="fa-solid fa-users mr-2"></i>
                         <span class="font-bold mr-2">개발 인원 :</span>
                         <span>4명</span>
                     </div>
                     <div class="flex items-center">
-                        <i class="fa-solid fa-users mr-2"></i>
-                        <span class="font-bold mr-2">사용한 기술 스택 :</span>
+                        <i class="fa-solid fa-user-pen mr-2"></i>
+                        <span class="font-bold mr-2">담당 역할 :</span>
                         <span></span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa-brands fa-square-github mr-2"></i>
+                        <span class="font-bold mr-2">프로젝트 깃허브 :</span>
+                        <a href="https://github.com/maegon" target="_blank" class="flex justify-center" onclick="window.open(this.href, '_blank'); return false;">
+                            Art Auction 깃허브로 이동
+                        </a>
+                    </div>
+                    <!-- 개발 환경 -->
+                    <div class="flex items-center">
+                        <i class="fa-brands fa-square-github mr-2"></i>
+                        <span class="font-bold mr-2">개발 환경</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="font-bold mr-2">- 프레임워크 :</span>
+                        <span>Spring Boot(Java 기반)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="font-bold mr-2">- 언어 :</span>
+                        <span>Java(JDK 21), HTML/CSS, Javascript, </span>
                     </div>
                 </div>
             </div>
