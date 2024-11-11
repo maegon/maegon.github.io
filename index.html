@@ -85,19 +85,6 @@
             }
         }
 
-        // PDF 다운로드 함수
-        function togglePDF() {
-            var element = document.getElementById('main-pdf');
-            var opt = {
-                margin:       0.5,
-                filename:     '임재원 portfolio.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 1 },
-                jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
-            };
-            // PDF 변환 및 다운로드 실행
-            html2pdf().from(element).set(opt).save();
-        }
 
         // 테마 전환 함수
         function toggleTheme() {
@@ -179,10 +166,6 @@
     <span class="text-sm font-semibold text-black dark:text-white">신입 개발자 임재원 포트폴리오</span>
 
     <div class="set_box">
-        <!-- pdf 파일로 다운로드 버튼 -->
-        <button onclick="togglePDF()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
-            <span id="download-icon"><i class="fa-solid fa-file-pdf"></i></span>
-        </button>
 
         <!-- 다크/라이트 모드 전환 버튼 -->
         <button onclick="toggleTheme()" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-2 px-4 rounded">
