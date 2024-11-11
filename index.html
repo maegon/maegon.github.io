@@ -828,18 +828,17 @@
                         <i class="fa-solid fa-face-tired mr-2"></i>
                         <span class="font-bold mr-2">트러블 슈팅</span>
                     </div>
+
+                    <span class="font-bold mr-2">회원가입 메일 인증 오류</span>
                     <div class="ml-4">
                         <div class="flex items-center mt-8">
-                            <span class="font-bold mr-2">- 문제 :</span>
-                            <span></span>
+                            <span class="font-bold mr-2">- 문제 : 회원가입폼의 이메일 인증 코드 발급 부분에서 이메일을 못 가져옴</span>
                         </div>
                         <div class="flex items-center mt-8">
-                            <span class="font-bold mr-2">- 원인 :</span>
-                            <span></span>
+                            <span class="font-bold mr-2">- 원인 : 회원가입폼과 관련된 memberForm 엔티티의 Email에 어노테이션으로 @NotBlank를 작성해 주었는데 인식을 못 함</span>
                         </div>
                         <div class="flex items-center mt-8">
-                            <span class="font-bold mr-2">- 해결 :</span>
-                            <span></span>
+                            <span class="font-bold mr-2">- 해결 : memberForm 엔티티의 Email에 어노테이션으로 @NotBlank, @NotEmpty 둘다 안되서 @NotNull로 써주니 해결됨</span>
                         </div>
                     </div>
                     <div class="flex items-center mt-8">
