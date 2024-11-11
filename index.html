@@ -13,6 +13,12 @@
             font-style: normal;
         }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body, ul, li {
           margin: 0; padding: 0; list-style: none;
         }
@@ -22,6 +28,11 @@
           color: inherit;
         }
 
+        img, iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
         /* 'active' 클래스가 적용된 사이드 메뉴 항목에 대한 스타일 */
         nav ul li.active {
