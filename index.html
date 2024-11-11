@@ -830,13 +830,19 @@
                     </div>
                     <div class="ml-4">
                         <div class="flex items-center mt-8">
-                            <span class="font-bold mr-2">- 문제 : 회원가입폼의 이메일 인증 코드 발급 부분에서 이메일을 못 가져옴</span>
+                            <i class="fa-solid fa-triangle-exclamation text-red-500 text-xl mr-2"></i>
+                            <span class="font-bold text-gray-800 dark:text-gray-200">문제 :</span>
+                            <span class="ml-2 text-gray-600 dark:text-gray-300">회원가입폼의 이메일 인증 코드 발급 부분에서 이메일을 못 가져옴</span>
                         </div>
                         <div class="flex items-center mt-8">
-                            <span class="font-bold mr-2">- 원인 : 회원가입폼과 관련된 memberForm 엔티티의 Email에 어노테이션으로 @NotBlank를 작성해 주었는데 인식을 못 함</span>
+                            <i class="fa-solid fa-magnifying-glass text-yellow-500 text-xl mr-2"></i>
+                            <span class="font-bold text-gray-800 dark:text-gray-200">원인 :</span>
+                            <span class="ml-2 text-gray-600 dark:text-gray-300">회원가입폼과 관련된 <code>memberForm</code> 엔티티의 <code>@Email</code>에 어노테이션으로 <code>@NotBlank</code>를 작성해 주었는데 인식을 못 함</span>
                         </div>
                         <div class="flex items-center mt-8">
-                            <span class="font-bold mr-2">- 해결 : memberForm 엔티티의 Email에 어노테이션으로 @NotBlank, @NotEmpty 둘다 안되서 @NotNull로 써주니 해결됨</span>
+                            <i class="fa-solid fa-check-circle text-green-500 text-xl mr-2"></i>
+                            <span class="font-bold text-gray-800 dark:text-gray-200">해결 :</span>
+                            <span class="ml-2 text-gray-600 dark:text-gray-300">memberForm 엔티티의 Email에 어노테이션으로 <code>@NotNull</code>을 써주니 해결됨</span>
                         </div>
                     </div>
                     <div class="flex items-center mt-8">
@@ -845,13 +851,19 @@
                     </div>
                     <div class="ml-4">
                         <div class="flex items-center mt-8">
-                            <span class="font-bold mr-2">- 문제 : 배포 환경에서 이미지를 가져오질 못함</span>
+                            <i class="fa-solid fa-triangle-exclamation text-red-500 text-xl mr-2"></i>
+                            <span class="font-bold text-gray-800 dark:text-gray-200">문제 :</span>
+                            <span class="ml-2 text-gray-600 dark:text-gray-300">배포 환경에서 이미지를 가져오질 못함</span>
                         </div>
                         <div class="flex items-center mt-8">
-                            <span class="font-bold mr-2">- 원인 : 이미지 형태가 File형태로 들어가서 경로를 가져오지 못함</span>
+                            <i class="fa-solid fa-magnifying-glass text-yellow-500 text-xl mr-2"></i>
+                            <span class="font-bold text-gray-800 dark:text-gray-200">원인 :</span>
+                            <span class="ml-2 text-gray-600 dark:text-gray-300">이미지 형태가 <code>File</code> 형태로 들어가서 경로를 가져오지 못함</span>
                         </div>
                         <div class="flex items-center mt-8">
-                            <span class="font-bold mr-2">- 해결 : ProjectService의 create함수에 제약 사항으로 thumbnailFile.getParentFIle()이 존재하면 디렉토리를 만드는 것으로 추가하여 해결</span>
+                            <i class="fa-solid fa-check-circle text-green-500 text-xl mr-2"></i>
+                            <span class="font-bold text-gray-800 dark:text-gray-200">해결 :</span>
+                            <span class="ml-2 text-gray-600 dark:text-gray-300">ProjectService의 <code>create</code> 함수에 제약 사항으로 <code>thumbnailFile.getParentFile()</code>이 존재하면 디렉토리를 만드는 것으로 추가하여 해결</span>
                         </div>
                     </div>
                     <div class="flex items-center mt-8">
