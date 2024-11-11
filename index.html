@@ -824,46 +824,60 @@
                         </iframe>
                     </div>
                     <!-- 트러블 슈팅 -->
-                    <div class="flex items-center mt-8">
-                        <i class="fa-solid fa-face-tired mr-2"></i>
-                        <span class="font-bold mr-2">트러블 슈팅 (1/2) : 회원가입 메일 인증 오류</span>
-                    </div>
-                    <div class="ml-4">
-                        <div class="flex items-center mt-8">
-                            <i class="fa-solid fa-triangle-exclamation text-red-500 text-xl mr-2"></i>
-                            <span class="font-bold text-gray-800 dark:text-gray-200">문제 :</span>
-                            <span class="ml-2 text-gray-600 dark:text-gray-300">회원가입폼의 이메일 인증 코드 발급 부분에서 이메일을 못 가져옴</span>
+                    <div class="flex flex-col items-start mt-8">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-face-tired mr-2 text-lg"></i>
+                            <span class="font-bold text-base">트러블 슈팅 (1/2) : 회원가입 메일 인증 오류</span>
+                        </div>
+                        <div class="ml-4">
+                            <div class="flex items-start mt-4">
+                                <i class="fa-solid fa-triangle-exclamation text-red-500 text-xl mr-2"></i>
+                                <div>
+                                    <span class="font-bold text-gray-800 dark:text-gray-200">문제 :</span>
+                                    <span class="block text-gray-600 dark:text-gray-300">회원가입폼의 이메일 인증 코드 발급 부분에서 이메일을 못 가져옴</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start mt-4">
+                                <i class="fa-solid fa-magnifying-glass text-yellow-500 text-xl mr-2"></i>
+                                <div>
+                                    <span class="font-bold text-gray-800 dark:text-gray-200">원인 :</span>
+                                    <span class="block text-gray-600 dark:text-gray-300">회원가입폼과 관련된 <code>memberForm</code> 엔티티의 <code>@Email</code>에 어노테이션으로 <code>@NotBlank</code>를 작성해 주었는데 인식을 못 함</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start mt-4">
+                                <i class="fa-solid fa-check-circle text-green-500 text-xl mr-2"></i>
+                                <div>
+                                    <span class="font-bold text-gray-800 dark:text-gray-200">해결 :</span>
+                                    <span class="block text-gray-600 dark:text-gray-300">memberForm 엔티티의 Email에 어노테이션으로 <code>@NotNull</code>을 써주니 해결됨</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="flex items-center mt-8">
-                            <i class="fa-solid fa-magnifying-glass text-yellow-500 text-xl mr-2"></i>
-                            <span class="font-bold text-gray-800 dark:text-gray-200">원인 :</span>
-                            <span class="ml-2 text-gray-600 dark:text-gray-300">회원가입폼과 관련된 <code>memberForm</code> 엔티티의 <code>@Email</code>에 어노테이션으로 <code>@NotBlank</code>를 작성해 주었는데 인식을 못 함</span>
+                            <i class="fa-solid fa-face-tired mr-2 text-lg"></i>
+                            <span class="font-bold text-base">트러블 슈팅 (2/2) : 배포 환경에서 이미지 불러오기 실패</span>
                         </div>
-                        <div class="flex items-center mt-8">
-                            <i class="fa-solid fa-check-circle text-green-500 text-xl mr-2"></i>
-                            <span class="font-bold text-gray-800 dark:text-gray-200">해결 :</span>
-                            <span class="ml-2 text-gray-600 dark:text-gray-300">memberForm 엔티티의 Email에 어노테이션으로 <code>@NotNull</code>을 써주니 해결됨</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center mt-8">
-                        <i class="fa-solid fa-face-tired mr-2"></i>
-                        <span class="font-bold mr-2">트러블 슈팅 (2/2) : 배포 환경에서 이미지 불러오기 실패</span>
-                    </div>
-                    <div class="ml-4">
-                        <div class="flex items-center mt-8">
-                            <i class="fa-solid fa-triangle-exclamation text-red-500 text-xl mr-2"></i>
-                            <span class="font-bold text-gray-800 dark:text-gray-200">문제 :</span>
-                            <span class="ml-2 text-gray-600 dark:text-gray-300">배포 환경에서 이미지를 가져오질 못함</span>
-                        </div>
-                        <div class="flex items-center mt-8">
-                            <i class="fa-solid fa-magnifying-glass text-yellow-500 text-xl mr-2"></i>
-                            <span class="font-bold text-gray-800 dark:text-gray-200">원인 :</span>
-                            <span class="ml-2 text-gray-600 dark:text-gray-300">이미지 형태가 <code>File</code> 형태로 들어가서 경로를 가져오지 못함</span>
-                        </div>
-                        <div class="flex items-center mt-8">
-                            <i class="fa-solid fa-check-circle text-green-500 text-xl mr-2"></i>
-                            <span class="font-bold text-gray-800 dark:text-gray-200">해결 :</span>
-                            <span class="ml-2 text-gray-600 dark:text-gray-300">ProjectService의 <code>create</code> 함수에 제약 사항으로 <code>thumbnailFile.getParentFile()</code>이 존재하면 디렉토리를 만드는 것으로 추가하여 해결</span>
+                        <div class="ml-4">
+                            <div class="flex items-start mt-4">
+                                <i class="fa-solid fa-triangle-exclamation text-red-500 text-xl mr-2"></i>
+                                <div>
+                                    <span class="font-bold text-gray-800 dark:text-gray-200">문제 :</span>
+                                    <span class="block text-gray-600 dark:text-gray-300">배포 환경에서 이미지를 가져오질 못함</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start mt-4">
+                                <i class="fa-solid fa-magnifying-glass text-yellow-500 text-xl mr-2"></i>
+                                <div>
+                                    <span class="font-bold text-gray-800 dark:text-gray-200">원인 :</span>
+                                    <span class="block text-gray-600 dark:text-gray-300">이미지 형태가 <code>File</code> 형태로 들어가서 경로를 가져오지 못함</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start mt-4">
+                                <i class="fa-solid fa-check-circle text-green-500 text-xl mr-2"></i>
+                                <div>
+                                    <span class="font-bold text-gray-800 dark:text-gray-200">해결 :</span>
+                                    <span class="block text-gray-600 dark:text-gray-300">ProjectService의 <code>create</code> 함수에 제약 사항으로 <code>thumbnailFile.getParentFile()</code>이 존재하면 디렉토리를 만드는 것으로 추가하여 해결</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="flex items-center mt-8">
