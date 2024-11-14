@@ -632,6 +632,7 @@
             <div class="container max-w-full text-start flex flex-col mt-10">
                 <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">Team Project - 1</span>
 
+                <!-- 이 구간 재활용 시작 -->
                 <!-- 프로젝트 내용 -->
                 <div class="flex items-center">
                     <div class="text-4xl font-semibold mt-4">Art Auction</div>
@@ -679,7 +680,7 @@
                         <div class="flex items-center">
                             <i class="fa-brands fa-square-github mr-2"></i>
                             <span class="font-bold mr-2">프로젝트 깃허브 :</span>
-                            <a href="https://github.com/maegon" target="_blank" class="border-b-2 border-blue-700 dark:border-blue-300" onclick="window.open(this.href, '_blank'); return false;">
+                            <a href="https://github.com/maegon/art_auction_24" target="_blank" class="border-b-2 border-blue-700 dark:border-blue-300" onclick="window.open(this.href, '_blank'); return false;">
                                 Art Auction 깃허브로 이동
                             </a>
                         </div>
@@ -721,8 +722,12 @@
                                 <span class="block">Nginxproxymanager, Termius</span></span>
                         </div>
                         <div class="flex flex-col">
-                            <span class="font-bold mr-2">- API, 라이브러리 :
-                                <span class="block">Toss Payments, 주소 찾기(다음 카카오 API), channel.io API</span></span>
+                            <span class="font-bold mr-2">- 의존성 :
+                                <span class="block">Spring Boot DevTools, Lombok, Spring Data JPA, MariaDB Driver,<br>
+                                    Spring Security, Spring Web, Oauth2-client, Thymeleaf, Validation, spring boot starter mail,<br>
+                                    Toss Payments, daumcdn 주소 찾기(다음 카카오 API), channel.io API
+                                </span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -738,7 +743,11 @@
                 <div class="ml-4 text-sm md:text-xl">
                     <div class="flex flex-col">
                         <span class="font-bold mt-8">- 회원가입</span>
-                        <span class="mr-2">아이디/비밀번호 중복 확인 기능과 이메일 인증 기능, 카카오 주소 API 등을 입력해야 회원가입이 되도록 하였습니다.</span>
+                        <span class="mr-2">
+                            아이디/비밀번호 중복 확인 기능과 이메일 인증 기능, 카카오 주소 API 등을 입력해야 회원가입이 되도록 하였습니다.<br>
+                            회원가입 도중 빈칸이 존재하거나 중복확인을 클릭하지 않았거나 이메일 인증이 완료되지 않은 상태에선<br>
+                            회원가입 버튼을 클릭해도 작동되지 않도록 하였습니다.
+                        </span>
                         <!-- 관련 이미지 -->
                         <div class="flex flex-col md:flex-row">
                             <img src="images/Art Auction 회원가입.jpg" alt="회원가입" class="w-full h-full md:w-1/2 md:h-1/2 my-2 pr-4">
@@ -759,7 +768,9 @@
 
                     <div class="flex flex-col">
                         <span class="font-bold mt-8">- 로그인 </span>
-                        <span class="mr-2">소셜 계정을 통한 간편 로그인, 회원 아이디로 로그인 기능을 구현하였습니다.</span>
+                        <span class="mr-2">
+                            소셜 계정을 통한 간편 로그인, 회원 아이디로 로그인 기능을 구현하였습니다.
+                        </span>
                         <!-- 관련 이미지 -->
                         <span class="mr-2 mt-2 font-semibold text-black-600 animate-pulse">소셜 로그인/회원 로그인</span>
                         <div class="flex flex-col md:flex-row">
@@ -884,36 +895,241 @@
                         </div>
                     </div>
                 </div>
+                <!-- 결과 및 소감 -->
                 <div class="flex flex-col items-start mt-8 text-sm md:text-xl">
                     <div class="flex items-start mt-4">
                         <i class="fa-solid fa-chart-line mr-2"></i>
                         <span class="font-bold mr-2">결과 및 소감 :</span>
                     </div>
-                    <span class="block">
+                    <span class="block ml-4">
                         Art Auction 프로젝트는 기술적인 도전과 협업의 중요성을 깨닫는 귀중한 경험이었습니다.<br>
                         이 프로젝트를 통해 웹 애플리케이션을 처음부터 끝까지 설계, 구현, 배포하며 Spring Boot와 Thymeleaf를 활용한<br>
                         웹 애플리케이션 개발 능력을 한층 더 심화시킬 수 있었고 팀원들과 주기적인 의사소통을 통해 문제를 파악하고 해결하여<br>
-                        일정에 맞춰 프로젝트를 완료할 수 있었습니다.<br>
+                        일정에 맞춰 프로젝트를 완료할 수 있었습니다.<br><br>
 
                         이 과정에서 Ajax를 통해 실시간과 같은 업데이트를 통해 데이터를 처리하고 artist, product, auction 엔티티 간의 관계를<br>
                         어떻게 설계해야 자연스러운 데이터 처리가 가능한지 고민하며 데이터베이스 설계를 하였습니다.<br>
-                        동시에 협업을 통해 서로의 아이디어를 조율하고 조화롭게 발전시켜 나가는 과정을 통해 커뮤니케이션 능력도 성장할 수 있었습니다.<br>
+                        동시에 협업을 통해 서로의 아이디어를 조율하고 조화롭게 발전시켜 나가는 과정을 통해 커뮤니케이션 능력도 성장할 수 있었습니다.<br><br>
 
                         앞으로 이러한 경험을 바탕으로 더 나은 웹 솔루션을 설계하고, 사용자들에게 다양한 경험과 실질적인 가치를 제공하는 서비스를 개발하고자 합니다.
                     </span>
                 </div>
+                <!-- 이 구간 재활용 끝 -->
+
             </div>
         </section>
 
-<!--        &lt;!&ndash; 프로젝트2 섹션 &ndash;&gt;-->
-<!--        <section id="projects2" class="flex flex-col justify-start mx-2 lg:mx-20 md:py-12 py-0">-->
-<!--            <div class="container max-w-full text-start flex flex-col mt-10">-->
-<!--                <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">Team Project - 2</span>-->
+        <!-- 프로젝트2 섹션 -->
+        <section id="projects2" class="flex flex-col justify-start mx-2 lg:mx-20 md:py-12 py-0">
+            <div class="container max-w-full text-start flex flex-col mt-10">
+                <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">Team Project - 2</span>
 
-<!--            </div>-->
-<!--        </section>-->
+                <!-- 이 구간 재활용 시작 -->
+                <!-- 프로젝트 내용 -->
+                <div class="flex items-center">
+                    <div class="text-4xl font-semibold mt-4">Apollon</div>
+                    <div class="text-xl text-gray-700 dark:text-gray-300 ml-4 mt-4">음악 커뮤니티 웹사이트</div>
+                </div>
+                <br>
 
-<!--        &lt;!&ndash; 프로젝트1 섹션 &ndash;&gt;-->
+                <!-- 썸네일 -->
+                <img src="images/아폴론 메인.jpg" alt="프로젝트 썸네일 또는 로고 이미지" class="w-full h-full md:w-full md:h-2/3 my-2">
+
+                <!-- 상세 설명 -->
+                <div class="space-y-4 text-sm md:text-xl">
+                    <div class="flex flex-col mt-8">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-calendar-days mr-2"></i>
+                            <span class="font-bold mr-2">개발 기간 :</span>
+                            <span>2024.05.27 ~ 2024.06.27</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mt-8">
+                        <div class="flex items-center">
+                            <span class="block">
+                                Apollon은 다양한 음악 장르의 창작자들이 손쉽게 자신의 자작곡을 업로드하고 공유할 수 있는 웹 사이트를 제공하기 위해 기획하였습니다.<br>
+                                음악을 검색하고 스트리밍할 수 있는 기능을 추가해 청취자들이 원하는 음악을 쉽게 찾고 감상할 수 있도록 지원하고<br>
+                                창작자와 청취자 간의 피드백과 소통을 장려하여 활발한 음악 커뮤니티를 형성하도록 도모하고<br>
+                                자작곡 외에도 여러 장르별 원곡들도 함께 청취하도록 구현하였습니다.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mt-8">
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-user-pen mr-2"></i>
+                            <span class="font-bold mr-2">담당 역할</span>
+                            <span class="block">
+                                - 깔끔한 구성과 사용자 편의성을 고려한 <span class="font-bold">[메인페이지]</span><br>
+                                - 직관적인 데이터 정렬과 심플한 디자인으로 사용자 경험을 고려한 <span class="font-bold">[차트목록]</span><br>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mt-8">
+                        <div class="flex items-center">
+                            <i class="fa-brands fa-square-github mr-2"></i>
+                            <span class="font-bold mr-2">프로젝트 깃허브 :</span>
+                            <a href="https://github.com/psm817/Apollon" target="_blank" class="border-b-2 border-blue-700 dark:border-blue-300" onclick="window.open(this.href, '_blank'); return false;">
+                                Apollon 깃허브로 이동
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 개발 환경 -->
+                    <div class="flex flex-col mt-8">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-layer-group mr-2"></i>
+                            <span class="font-bold mr-2">개발 환경</span>
+                        </div>
+                    </div>
+                    <div class="ml-4 space-y-4">
+                        <div class="flex flex-col">
+                            <span class="font-bold mr-2">- 프레임워크 :
+                                <span class="block">Spring Boot(Java 기반)</span></span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold mr-2">- 언어 :
+                                <span class="block">Java(JDK 17), HTML/CSS, Javascript</span></span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold mr-2">- 데이터베이스 :
+                                <span class="block">MySQL</span></span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold mr-2">- IDE :
+                                <span class="block">IntelliJ</span></span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold mr-2">- 빌드 도구 :
+                                <span class="block">Gradle</span></span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold mr-2">- 관리 도구 :
+                                <span class="block">GitHub</span></span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold mr-2">- 배포 도구 :
+                                <span class="block">X</span></span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold mr-2">- 의존성 :
+                                <span class="block">Spring Boot DevTools, Lombok, Spring Data JPA, MariaDB Driver,<br>
+                                    Spring Security, Spring Web, Oauth2-client, Thymeleaf, Validation
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center mt-8">
+                    <i class="fa-solid fa-diagram-project mr-2"></i>
+                    <span class="font-bold mr-2 text-sm md:text-xl">ERD 설계 이미지</span>
+                </div>
+                <img src="images/아폴론 erd.png" alt="아폴론 ERD" class="w-full h-full md:w-full md:h-1/4 my-2">
+                <div class="flex items-center mt-8 text-sm md:text-xl">
+                    <i class="fa-solid fa-gears mr-2"></i>
+                    <span class="font-bold mr-2">내가 작업한 기능</span>
+                </div>
+                <div class="ml-4 text-sm md:text-xl">
+                    <div class="flex flex-col">
+                        <span class="font-bold mt-8">- 메인페이지</span>
+                        <span class="mr-2">
+                            메인페이지의 상단 바(header)와 하단 바(footer)를 고정으로 하여 다른 페이지로 이동해도<br>
+                            똑같은 위치에 배치되어 상호작용되도록 구현하였습니다.
+                        </span>
+                        <!-- 관련 이미지 -->
+                        <div class="flex flex-col md:flex-row">
+                            <img src="images/아폴론 메인 1.jpg" alt="메인" class="w-full h-full md:w-1/2 md:h-1/2 my-2 pr-4">
+                            <img src="images/아폴론 메인 2.jpg" alt="메인" class="w-full h-full md:w-1/2 md:h-1/2 my-2 pr-4">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <span class="font-bold mt-8">- 차트목록 (1/2) : TOP100</span>
+                        <span class="mr-2">
+                            좋아요(추천)가 가장 높은 순으로 음악을 리스팅하였습니다.<br>
+                            로그인하지 않았을 경우 음악을 플레이리스트(하단 바 확장)에 담을 수 없으며, 음악 추천도 불가능합니다.<br>
+                            로그인했을 경우 플레이리스트에 곡을 담을 수 있습니다.
+                        </span>
+                        <!-- 관련 이미지 -->
+                        <div class="flex flex-col md:flex-row">
+                            <img src="images/아폴론 TOP100.png" alt="TOP100" class="w-full h-full md:w-1/2 md:h-1/2 my-2 pr-4">
+                            <img src="images/아폴론 TOP100 1.jpg" alt="TOP100" class="w-full h-full md:w-1/2 md:h-1/2 my-2 pr-4">
+                        </div>
+                        <span class="font-bold mt-8">- 차트목록 (2/2) : 장르별 차트</span>
+                        <span class="mr-2">
+                            음악 장르에 따라 구분하여 음악을 리스팅하였습니다.<br>
+                            음악 장르에 대한 기준은 사용자가 음악을 업로드할 때 음악 장르를 선택하게 되어 있습니다.<br>
+                            선택된 장르에 따라 리스팅된다고 보시면 됩니다.
+                        </span>
+                        <!-- 관련 이미지 -->
+                        <div class="flex flex-col md:flex-row">
+                            <img src="images/아폴론 장르별.png" alt="장르별차트" class="w-full h-full md:w-1/2 md:h-1/2 my-2 pr-4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center mt-8 text-sm md:text-xl">
+                    <i class="fa-solid fa-video mr-2"></i>
+                    <span class="font-bold mr-2">시연 영상</span>
+                </div>
+                <div class="mt-4">
+                    <iframe
+                            class="w-full h-full md:w-2/3 md:h-2/3"
+                            src="https://www.youtube.com/embed/bkNz_LbryU0?autoplay=0&rel=0"
+                            title="시연 영상"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <!-- 트러블 슈팅 -->
+                <div class="flex flex-col items-start mt-8 text-sm md:text-xl">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-face-tired mr-2"></i>
+                        <span class="font-bold"><span class="font-bold text-red-400">공통</span> 트러블 슈팅 : 차트목록에서의 담기 기능</span>
+                    </div>
+                    <div class="ml-4">
+                        <div class="flex items-start mt-4">
+                            <i class="fa-solid fa-triangle-exclamation text-red-500 text-xl mr-2"></i>
+                            <div>
+                                <span class="font-bold text-gray-800 dark:text-gray-200">문제 :</span>
+                                <span class="block text-gray-600 dark:text-gray-300">TOP100.html이나 genreChart.html에서 '담기' 클릭 시 회원 개인의 플레이리스트에 음악이 추가되는 기능을 컨트롤러에서 구현은 했지만 실제 프론트단에서는 해당 음악 목록이 나타나지 않음</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start mt-4">
+                            <i class="fa-solid fa-magnifying-glass text-yellow-500 text-xl mr-2"></i>
+                            <div>
+                                <span class="font-bold text-gray-800 dark:text-gray-200">원인 :</span>
+                                <span class="block text-gray-600 dark:text-gray-300">회원 당 하나의 플레이리스트를 가져오는데 컨트롤러에서 플레이리스트를 가져올 때 <code>List<></code>으로 가져옴
+                            </div>
+                        </div>
+                        <div class="flex items-start mt-4">
+                            <i class="fa-solid fa-check-circle text-green-500 text-xl mr-2"></i>
+                            <div>
+                                <span class="font-bold text-gray-800 dark:text-gray-200">해결 :</span>
+                                <span class="block text-gray-600 dark:text-gray-300">실제로 음악 담기 기능이 정확히 동작하는 지 파악하기 위해 <code>@OneToMany</code> 어노테이션이 적용된 해당 컬럼은 <code>@ManyToMany</code>로 변경하여 DB에서 리스트를 볼 수 있도록 하였고, 실제로 담기 기능은 동작하는 것을 확인했음. 컨트롤러에서 플레이리스트를 가져올 때 <code>List<></code>를 PlayList 타입으로 변경해주고 타림리프 문법에 맞게 수정함으로써 해결함</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 결과 및 소감 -->
+                <div class="flex flex-col items-start mt-8 text-sm md:text-xl">
+                    <div class="flex items-start mt-4">
+                        <i class="fa-solid fa-chart-line mr-2"></i>
+                        <span class="font-bold mr-2">결과 및 소감 :</span>
+                    </div>
+                    <span class="block ml-4">
+                        Apollon 프로젝트를 시작하기 앞서 조원들과 Git-Flow 전략 하나씩 맞춰가며 다양한 오류도 겪어보고<br>
+                        해결도 해보고 나서 프로젝트를 시작하여 깃 브랜치 오류에 대한 대처를 원활히 할 수 있었습니다.<br>
+                        프로젝트의 목표였던 음악을 업로드하고 음악을 웹에서 재생하며 다른 페이지로 이동하였을 때 정지없이 재생되는 것이<br>
+                        목표였습니다. 아쉬운 점은 다른 페이지로 로딩하는 짧은 구간동안 음악이 잠깐 끊히고 페이지 로딩이 되면 이어서<br>
+                        재생되었습니다. 하지만 전체적으로 기능이 정상 작동되어 뿌듯하였고 이 프로젝트를 통해 개발자로서의 역량과 관심을<br>
+                        크게 향상시킨 경험이었습니다.
+                    </span>
+                </div>
+                <!-- 이 구간 재활용 끝 -->
+
+            </div>
+        </section>
+
+        <!-- 프로젝트3 섹션 -->
 <!--        <section id="projects3" class="flex flex-col justify-start mx-2 lg:mx-20 md:py-12 py-0">-->
 <!--            <div class="container max-w-full text-start flex flex-col mt-10">-->
 <!--                <span class="text-3xl font-bold text-blue-600 dark:text-blue-200">Personal Project</span>-->
